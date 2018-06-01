@@ -1,21 +1,40 @@
-pipeline {
+import groovy.json.JsonOutput
 
-    agent none
-    stages{
-      stage ('Container Build') {
-        agent { dockerfile {
-            filename 'Dockerfile.build'
-            dir 'build'
-            label 'tcooksd858/node-web-app'
-            additionalBuildArgs  '--build-arg version=1.0.2'
-          }
-        }
-      }
+node ('docker-slave') {
 
-     stage('Example') {
-            steps {
-                echo 'Hello World'
-            }
-      }
+    def app
+
+    sh "git rev-parse HEAD > .git/commit-id"
+    def commit_id = readFile('.git/commit-id').trim()
+    println commit_id
+
+    stage('Clone repository') {
+        /* Let's make sure we have the repository cloned to our workspace */
+
+        checkout scm
     }
+    stage('Build image') {
+    /* This builds the actual image; synonymous to
+     * docker build on the command line */
+
+    app = docker.build("tcooksd858/node-web-app")
+    stage('Test image') {
+    /* Ideally, we would run a test framework against our image.
+     * For this example, we're using a Volkswagen-type approach ;-) */
+
+    app.inside {
+        sh 'echo "Tests passed"'
+    }
+}
+
+stage('Push image') {
+    /* Finally, we'll push the image with two tags:
+     * First, the incremental build number from Jenkins
+     * Second, the 'latest' tag.
+     * Pushing multiple tags is cheap, as all the layers are reused. */
+    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+        app.push("${commit_id}")
+        app.push("latest")
+    }
+}
 }
