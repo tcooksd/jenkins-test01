@@ -18,6 +18,8 @@ node ('docker-slave') {
      * docker build on the command line */
 
     app = docker.build("tcooksd858/node-web-app")
+    }
+
     stage('Test image') {
     /* Ideally, we would run a test framework against our image.
      * For this example, we're using a Volkswagen-type approach ;-) */
@@ -25,16 +27,16 @@ node ('docker-slave') {
     app.inside {
         sh 'echo "Tests passed"'
     }
-}
+    }
 
-stage('Push image') {
+    stage('Push image') {
     /* Finally, we'll push the image with two tags:
      * First, the incremental build number from Jenkins
      * Second, the 'latest' tag.
      * Pushing multiple tags is cheap, as all the layers are reused. */
-    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-        app.push("${commit_id}")
-        app.push("latest")
-    }
+     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+          app.push("${commit_id}")
+          app.push("latest")
+        }
 }
 }
