@@ -10,10 +10,12 @@ node ('docker-slave') {
         /* Let's make sure we have the repository cloned to our workspace */
 
         checkout scm
-        sh "git rev-parse HEAD > commit-id"
-        def commit_id = readFile('commit-id').trim()
-        println commit_id
+
     }
+
+    sh "git rev-parse HEAD > commit-id"
+    def commit_id = readFile('commit-id').trim()
+    println commit_id
 
     stage('Build image') {
     /* This builds the actual image; synonymous to
