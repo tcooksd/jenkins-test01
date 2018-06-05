@@ -390,8 +390,9 @@ node ('docker-slave') {
       ]
       string Morpheusret = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
       echo Morpheusret;
-      def parsedJSON = parseJSON(Morpheusret)
-      echo parsedJSON
+      writeJSON file: 'output.json', json:  Morpheusret
+      def props = readJSON file: 'output.json'
+      echo props 
       }
    }
 }
