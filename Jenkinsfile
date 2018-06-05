@@ -388,9 +388,10 @@ node ('docker-slave') {
         ]
       ]
       string Morpheusret = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
-      echo "Bringing in the big guns::"
       echo Morpheusret;
       def json = JsonOutput.toJson(Morpheusret)
+      def data = new JsonSlurperClassic().parseText(json)
+      echo "${Root}"
       }
    }
 }
