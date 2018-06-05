@@ -387,7 +387,8 @@ node ('docker-slave') {
           "id": 489
         ]
       ]
-      echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
+      string Morpheusret = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
+      echo Morpheusret;
       }
    }
 }
