@@ -392,7 +392,7 @@ node ('docker-slave') {
       echo Morpheusret;
       writeJSON file: 'output.json', json:  Morpheusret
       def props = readJSON file: 'output.json'
-      echo props 
+      echo props
       }
    }
 }
