@@ -396,5 +396,5 @@ node ('docker-slave') {
 ]
 echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
 }
-
+}
 }
