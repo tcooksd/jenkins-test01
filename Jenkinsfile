@@ -1,5 +1,6 @@
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurperClassic
+import groovy.json.*
 
 
 node ('docker-slave') {
@@ -390,8 +391,7 @@ node ('docker-slave') {
       ]
       string Morpheusret = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
       echo Morpheusret;
-      def json = JsonOutput.toJson(Morpheusret)
-      echo JsonOutput.prettyPrint(json.success)
+      println JsonOutput.toJson(Morpheusret)
       }
    }
 }
