@@ -391,7 +391,7 @@ node ('docker-slave') {
       echo Morpheusret;
       def json = JsonOutput.toJson(Morpheusret)
       def data = new JsonSlurperClassic().parseText(json)
-      echo "${Root}"
+      echo "${data.Root}"
       }
    }
 }
