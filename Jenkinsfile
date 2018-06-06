@@ -393,8 +393,8 @@ node ('docker-slave') {
       echo Morpheusret
       def json = JsonOutput.toJson(Morpheusret)
       println JsonOutput.prettyPrint(JsonOutput.toJson(Morpheusret))
-
-
+      def json = new JsonSlurper().parseText(Morpheusret)
+      json.artifacts.each{
+        println it
       }
-   }
 }
