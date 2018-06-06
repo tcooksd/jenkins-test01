@@ -391,7 +391,6 @@ node ('docker-slave') {
       ]
       string Morpheusret = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
       echo Morpheusret
-      def json = JsonOutput.toJson(Morpheusret)
       println JsonOutput.prettyPrint(JsonOutput.toJson(Morpheusret))
       def json = new JsonSlurper().parseText(Morpheusret)
       json.artifacts.each{
