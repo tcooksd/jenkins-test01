@@ -395,7 +395,7 @@ node ('docker-slave') {
 
       def schoolInfo= json.appTemplate
       schoolInfo.each{ key, value, i ->
-        println "Key $key"
+        println "Key $key.id"
       }
 }
 }
