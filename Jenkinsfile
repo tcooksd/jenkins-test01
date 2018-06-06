@@ -390,9 +390,8 @@ node ('docker-slave') {
         ]
       ]
       string Morpheusret = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
-      writeJSON(file: 'message1.json', json: Morpheusret)
-      def json = JsonOutput.toJson(Morpheusret)
-      echo json
+      def js4 = new JsBuilder(Morpheusret.content)
+
       }
    }
 }
