@@ -390,7 +390,7 @@ node ('docker-slave') {
         ]
       ]
       string Morpheusret = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
-      println JsonOutput.prettyPrint(JsonOutput.toJson(Morpheusret.success))
+      println JsonOutput.prettyPrint(JsonOutput.toJson(Morpheusret.appTemplate))
       }
    }
 }
