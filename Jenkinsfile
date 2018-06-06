@@ -397,6 +397,9 @@ node ('docker-slave') {
       schoolInfo.each{
         println it
       }
+      def props = Map test1 readJSON Morpheusret:
+      echo props.Apptemplate
+
 }
 }
 }
