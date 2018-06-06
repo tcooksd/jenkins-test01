@@ -390,7 +390,7 @@ node ('docker-slave') {
         ]
       ]
       string Morpheusret = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
-      def js4 = JsBuilder(Morpheusret.content)
+      def js4 = JsBuilder(Morpheusret)
 
       }
    }
