@@ -393,7 +393,7 @@ node ('docker-slave') {
 
       def json = new JsonSlurper().parseText(Morpheusret)
 
-      def schoolInfo= json.success
+      def schoolInfo= json.Apptemplate
       schoolInfo.each{
         println it
       }
