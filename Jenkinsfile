@@ -398,3 +398,5 @@ node ('docker-slave') {
         println it
       }
 }
+}
+}
