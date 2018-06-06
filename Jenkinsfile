@@ -395,7 +395,7 @@ node ('docker-slave') {
 
       def schoolInfo= json
       schoolInfo.each{
-        println it
+        println it.id
       }
 }
 }
