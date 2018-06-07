@@ -395,11 +395,8 @@ node ('docker-slave') {
 
 
       def json = new JsonSlurper().parseText(Morpheusret)
-      def AppTemplate01= json.appTemplate.id
-      AppTemplate01.each{ key, value, i ->
-        key01 = "$key"
-      }
-      echo key01
+
+      echo json
 }
 }
 }
