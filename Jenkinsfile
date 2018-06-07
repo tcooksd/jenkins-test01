@@ -399,7 +399,7 @@ node ('docker-slave') {
         testout = "$key"
       }
       echo testout
-      def AppTemplate02= json01.appTemplate
+      def AppTemplate02= json01.appTemplate[0]
 
       AppTemplate02.each{
         println it
