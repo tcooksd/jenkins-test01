@@ -400,7 +400,7 @@ node ('docker-slave') {
       }
       echo testout
 
-      json01.artifacts.each{
+      json01.each{
         println it
       }
 
