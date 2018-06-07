@@ -400,10 +400,9 @@ node ('docker-slave') {
       }
       echo testout
 
-      def AppTemplate02= json01.appTemplate.name 
-      AppTemplate02.each{ key1, value, i ->
-        echo "$key1"
-      }
+      def AppTemplate02= json01.appTemplate.name
+      echo AppTemplate02
+  
 }
 }
 }
