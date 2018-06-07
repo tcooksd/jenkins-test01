@@ -390,7 +390,7 @@ node ('docker-slave') {
         ]
       ]
       string Morpheusret = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
-
+      string Morpheusret01 = morpheusApp.pullJson(morpheusUrl,  "${bearer}")
       def json = new JsonSlurper().parseText(Morpheusret)
 
       def AppTemplate01= json.appTemplate.id
