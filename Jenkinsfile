@@ -372,7 +372,7 @@ node ('docker-slave') {
 
       def AppTemplate02= json01
 
-      echo AppTemplate02.getClass()
+      println AppTemplate02.getClass()
 
 }
 }
