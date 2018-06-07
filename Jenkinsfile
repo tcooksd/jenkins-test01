@@ -16,32 +16,7 @@ node ('docker-slave') {
     def commit_id = readFile('commit-id').trim()
     println commit_id
 
-    stage('Build image') {
-    /* This builds the actual image; synonymous to
-     * docker build on the command line */
 
-    app = docker.build("tcooksd858/node-web-app")
-    }
-
-    stage('Test image') {
-    /* Ideally, we would run a test framework against our image.
-     * For this example, we're using a Volkswagen-type approach ;-) */
-
-      app.inside {
-          sh 'echo "Tests passed"'
-      }
-    }
-
-    stage('Push image') {
-    /* Finally, we'll push the image with two tags:
-     * First, the incremental build number from Jenkins
-     * Second, the 'latest' tag.
-     * Pushing multiple tags is cheap, as all the layers are reused. */
-      docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-          app.push("${commit_id}")
-          app.push("latest")
-        }
-    }
 
     stage('Provision Dev App') {
     /*
@@ -389,16 +364,12 @@ node ('docker-slave') {
           "id": 489
         ]
       ]
-      string Morpheusret = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
+
       string Morpheusret01 = morpheusApp.pullJson(morpheusUrl,  "${bearer}")
-      def json = new JsonSlurper().parseText(Morpheusret)
+
       def json01 = new JsonSlurper().parseText(Morpheusret01)
 
-      def AppTemplate01= json.appTemplate.id
-      AppTemplate01.each{ key, value, i ->
-        testout = "$key"
-      }
-      echo testout
+
       def AppTemplate02= json01
 
       echo AppTemplate02.getClass()
