@@ -51,6 +51,8 @@ node ('docker-slave') {
 
       withCredentials([string(credentialsId: 'sandboxauth', variable: 'bearer')]) {
       String morpheusUrl = 'https://sandbox.morpheusdata.com/api/app-templates'
+
+
       Map<?, ?> postBody = [
        "image": "/assets/apps/template.png",
         "tiers": [
@@ -391,13 +393,14 @@ node ('docker-slave') {
       ]
       string Morpheusret = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
 
+      string Morpheusinfo = morpheusApp.pullJson(morpheusUrl, "${bearer}")
+      def jsoninfo = new JsonSlurper().parseText(Morpheusinfo)
       def json = new JsonSlurper().parseText(Morpheusret)
-
-      def schoolInfo= json.appTemplate.id
-      schoolInfo.each{ key, value, i ->
-        testout = "$key"
+      def AppTemplate01= json.appTemplate.id
+      AppTemplate01.each{ key, value, i ->
+        key01 = "$key"
       }
-      echo testout 
+      echo jsoninfo 
 }
 }
 }
