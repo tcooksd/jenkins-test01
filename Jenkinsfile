@@ -400,7 +400,7 @@ node ('docker-slave') {
       }
       echo testout
 
-      json01.each{
+      json01.appTemplate.each{
         println it
       }
 
