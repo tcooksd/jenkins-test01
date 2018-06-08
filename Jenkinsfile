@@ -370,7 +370,7 @@ node ('docker-slave') {
       def json01 = new JsonSlurper().parseText(Morpheusret01)
       println json01.getClass().getName()
       for ( e in json01 ) {
-          print "key = ${e.key}, value = ${e.value}""
+          print "key = ${e.key}, value = ${e.value}"
       }
 }
 }
