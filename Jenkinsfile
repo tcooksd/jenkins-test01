@@ -370,9 +370,9 @@ node ('docker-slave') {
       def json01 = new JsonSlurper().parseText(Morpheusret01)
 
 
-      def AppTemplate02= json01
 
-      println AppTemplate02.getClass()
+
+      println Morpheusret01.getClass()
 
 }
 }
