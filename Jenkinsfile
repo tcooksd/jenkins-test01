@@ -377,6 +377,7 @@ node ('docker-slave') {
              }
             }
       }
+      println test102 
 }
 }
 }
