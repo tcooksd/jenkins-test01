@@ -369,6 +369,9 @@ node ('docker-slave') {
 
       def json01 = new JsonSlurper().parseText(Morpheusret01)
 
+      for ( a in json01 ) {
+        println a 
+      }
 
 
 
