@@ -372,7 +372,7 @@ node ('docker-slave') {
       for ( e in json01 ) {
           for (a in e.value) {
             for (g in a) {
-              print g.getClass().getName() }
+              print g."id" }
             }
       }
 }
