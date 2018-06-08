@@ -367,7 +367,9 @@ node ('docker-slave') {
 
       string Morpheusret01 = morpheusApp.pullJson(morpheusUrl,  "${bearer}")
 
-      println JsonOutput.toJson(Morpheusret01)
+      testtcook = JsonOutput.toJson(Morpheusret01)
+
+      println testtcook.getClass().getName()
 
 }
 }
