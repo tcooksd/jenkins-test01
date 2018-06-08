@@ -374,10 +374,6 @@ node ('docker-slave') {
 
       println Morpheusret01.getClass()
 
-      def props = readJSON text: Morpheusret01
-
-      println props.getClass()
-
 }
 }
 }
