@@ -373,7 +373,7 @@ node ('docker-slave') {
           for (a in e.value) {
             for (g in a) {
               test102 = g
-              print g
+              println g
              }
             }
       }
