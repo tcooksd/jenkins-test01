@@ -371,7 +371,8 @@ node ('docker-slave') {
       String test102 = ""
       for ( e in json01 ) {
           for (a in e.value) {
-              println a.id 
+              for ( key, value in a ) {
+                println key }
             }
       }
 }
