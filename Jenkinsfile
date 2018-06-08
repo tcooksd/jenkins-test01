@@ -379,6 +379,7 @@ node ('docker-slave') {
       }
       echo "newtest"
       println test102
+      echo "oldtest"
 }
 }
 }
