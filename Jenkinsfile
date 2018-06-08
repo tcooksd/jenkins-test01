@@ -376,7 +376,7 @@ node ('docker-slave') {
 
       def props = readJSON text: Morpheusret01
 
-      echo props
+      println props
 
 }
 }
