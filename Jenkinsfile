@@ -372,7 +372,7 @@ node ('docker-slave') {
 
 
 
-      println Morpheusret01.getClass()
+      println json01.getClass()
 
 }
 }
