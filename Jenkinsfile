@@ -640,7 +640,7 @@ node ('docker-slave') {
           ]
         ],
         "environment": "Dev",
-        "templateName": "test01",
+        "templateName": "${blueprintname}",
         "name": "tcooktest01",
         "templateImage": "",
         "type": "morpheus",
