@@ -374,7 +374,7 @@ node ('docker-slave') {
       def jsonSlurper = new JsonSlurper()
       def jsonObject = jsonSlurper.parseText(Morpheusret01)
       def blueprint = jsonObject.appTemplates
-
+      def blueprintid = ""
 
       def availblueprnt = ""
       for ( e in blueprint ) {
@@ -387,7 +387,9 @@ node ('docker-slave') {
         echo "testing available blueprint " + availblueprnt
       } else {
         getid = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
-        println getid
+        def jsonObject01 = jsonSlurper.parseText(getid)
+        println jsonObject01
+
       }
     }
   }
