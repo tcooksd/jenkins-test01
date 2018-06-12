@@ -393,8 +393,9 @@ node ('docker-slave') {
 
 
       }
-        echo "${blueprintid}"
+
     }
+    echo "${blueprintid}"
   }
 
 
