@@ -366,9 +366,7 @@ node ('docker-slave') {
       ]
 
       string Morpheusret01 = morpheusApp.pullJson(morpheusUrl, "${bearer}")
-      String value01 = new String(Morpheusret01, "UTF-8")
-      def json01 = new JsonSlurper().parseText(value01)
-      println json01
+      print Morpheusret01
 
 }
 }
