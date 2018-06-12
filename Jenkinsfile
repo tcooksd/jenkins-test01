@@ -375,9 +375,7 @@ node ('docker-slave') {
       def jsonObject = jsonSlurper.parseText(Morpheusret01)
       def blueprint = jsonObject.appTemplates[0].name
 
-      if ( blueprint == "aws-test") {
-        println blueprint
-      }
+      echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
 
 
 
