@@ -656,7 +656,7 @@ node ('docker-slave') {
       ]
 
       echo morpheusApp.buildApp(morpheusUrl01, postBody, "${bearer}")
-      println blueprintid 
+      echo "${blueprintid}" 
       }
 
     }
