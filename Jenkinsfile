@@ -19,6 +19,7 @@ node ('docker-slave') {
     environment {
       LC_ALL = en_US.UTF-8
     }
+    def blueprintid = ""
 
 
 
@@ -374,7 +375,7 @@ node ('docker-slave') {
       def jsonSlurper = new JsonSlurper()
       def jsonObject = jsonSlurper.parseText(Morpheusret01)
       def blueprint = jsonObject.appTemplates
-      def blueprintid = ""
+
 
       def availblueprnt = ""
       for ( e in blueprint ) {
