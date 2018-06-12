@@ -370,7 +370,7 @@ node ('docker-slave') {
       ]
 
       Morpheusret01 = morpheusApp.pullJson(morpheusUrl, "${bearer}")
-      println Morpheusret01
+      println Morpheusret01.getClass()
 
 
 
