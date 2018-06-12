@@ -373,10 +373,11 @@ node ('docker-slave') {
 
       def jsonSlurper = new JsonSlurper()
       def jsonObject = jsonSlurper.parseText(Morpheusret01)
-
       def blueprint = jsonObject.appTemplates[0].name
 
-      println blueprint
+      if ( blueprint = "aws-test") {
+        println blueprint
+      }
 
 
 
