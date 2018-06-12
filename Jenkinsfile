@@ -530,7 +530,7 @@ node ('docker-slave') {
                     "code": "mysql-5.7-single",
                     "id": 90
                   ],
-                  "name": "$[account]-$[cloudCode]-$[type]-$[sequence]",
+                  "name": "",
                   "allowExisting": false
                 ],
                 "planObj": [
