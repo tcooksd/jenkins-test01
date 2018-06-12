@@ -379,6 +379,7 @@ node ('docker-slave') {
         if ( e.name == 'test01' ) {
           availblueprnt = e.name
         }
+      }
 
         println availblueprnt
       /*  if ( availblueprnt != 'test01') {
