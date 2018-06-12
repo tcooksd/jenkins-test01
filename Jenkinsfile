@@ -16,7 +16,9 @@ node ('docker-slave') {
     sh "git rev-parse HEAD > commit-id"
     def commit_id = readFile('commit-id').trim()
     println commit_id
-    export LC_ALL=en_US.UTF-8
+    environment {
+      LC_ALL = en_US.UTF-8
+    }
 
 
 
