@@ -383,7 +383,8 @@ node ('docker-slave') {
 
         /* println availblueprnt.getClass() */
        if ( availblueprnt != 'test01') {
-         println availblueprnt 
+         echo "starting manual print from here"
+         println availblueprnt
           /* echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}") */
         }
       }
