@@ -381,7 +381,7 @@ node ('docker-slave') {
         }
       }
 
-      if ( availblueprnt !=null) {
+      if ( availblueprnt != 'test01') {
         echo "testing available blueprint " + availblueprnt
       } else {
         echo "blue print already exists."
