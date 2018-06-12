@@ -3,6 +3,7 @@ import groovy.json.JsonSlurperClassic
 import groovy.json.*
 
 
+
 node ('docker-slave') {
 
     def app
@@ -15,6 +16,7 @@ node ('docker-slave') {
     sh "git rev-parse HEAD > commit-id"
     def commit_id = readFile('commit-id').trim()
     println commit_id
+    export LC_ALL=en_US.UTF-8
 
 
 
@@ -366,7 +368,7 @@ node ('docker-slave') {
       ]
 
       Morpheusret01 = morpheusApp.pullJson(morpheusUrl, "${bearer}")
-      fileContents = new String(Morpheusret01.getBytes("UTF-8"))
+      println Morpheusret01
 
 
 
