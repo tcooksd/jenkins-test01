@@ -8,7 +8,7 @@ node ('docker-slave') {
         /* Let's make sure we have the repository cloned to our workspace */
         checkout scm
     }
-
+    /* Setup the naming schema for docker hub to commit new containers */
     sh "git rev-parse HEAD > commit-id"
     def commit_id = readFile('commit-id').trim()
     /* reqjuired to read json formatted data */
@@ -21,9 +21,7 @@ node ('docker-slave') {
     blueprintname = "test01"
 
     stage('Build Template') {
-    /*
-     *
-     *
+    /*  Build Template
      *  */
       withCredentials([string(credentialsId: 'sandboxauth', variable: 'bearer')]) {
       String morpheusUrl = 'https://sandbox.morpheusdata.com/api/app-templates'
@@ -365,14 +363,14 @@ node ('docker-slave') {
           "id": 489
         ]
       ]
-
+      /* Use the morpheusApp module to pars json for current values  */
       Morpheusret01 = morpheusApp.pullJson(morpheusUrl, "${bearer}")
 
       def jsonSlurper = new JsonSlurper()
       def jsonObject = jsonSlurper.parseText(Morpheusret01)
       def blueprint = jsonObject.appTemplates
 
-
+      /* Check to see if template exists */
       def availblueprnt = ""
       for ( e in blueprint ) {
         if ( e.name == "${blueprintname}" ) {
@@ -381,7 +379,7 @@ node ('docker-slave') {
       }
 
       if ( availblueprnt == "${blueprintname}") {
-        echo "testing available blueprint " + availblueprnt
+        echo "Blueprint is already available. " + availblueprnt
       } else {
         getid = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
         def jsonObject01 = jsonSlurper.parseText(getid)
@@ -390,8 +388,6 @@ node ('docker-slave') {
       }
     }
   }
-
-
 
     stage('Provision Dev App') {
       withCredentials([string(credentialsId: 'sandboxauth', variable: 'bearer')]) {
