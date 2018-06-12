@@ -366,7 +366,7 @@ node ('docker-slave') {
       ]
 
       Morpheusret01 = morpheusApp.pullJson(morpheusUrl, "${bearer}")
-      print Morpheusret01.appTemplates
+      print Morpheusret01
 
 }
 }
