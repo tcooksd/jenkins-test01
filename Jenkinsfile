@@ -1,7 +1,5 @@
 import groovy.json.*
 
-
-
 node ('docker-slave') {
 
     def app
@@ -13,21 +11,20 @@ node ('docker-slave') {
 
     sh "git rev-parse HEAD > commit-id"
     def commit_id = readFile('commit-id').trim()
-    println commit_id
+    /* reqjuired to read json formatted data */
     environment {
       LC_ALL = en_US.UTF-8
     }
+    /* define template id initial global var */
     def blueprintid = ""
+    /* define template name */
     blueprintname = "test01"
-
-
 
     stage('Build Template') {
     /*
      *
      *
      *  */
-
       withCredentials([string(credentialsId: 'sandboxauth', variable: 'bearer')]) {
       String morpheusUrl = 'https://sandbox.morpheusdata.com/api/app-templates'
       Map<?, ?> postBody = [
@@ -359,7 +356,7 @@ node ('docker-slave') {
         ],
         "environment": "Dev",
         "templateName": "nodexpress",
-        "name": "test01",
+        "name": "${blueprintname}",
         "templateImage": "",
         "type": "morpheus",
         "category": "APP",
@@ -383,18 +380,15 @@ node ('docker-slave') {
         }
       }
 
-      if ( availblueprnt == 'test01') {
+      if ( availblueprnt == "${blueprintname}") {
         echo "testing available blueprint " + availblueprnt
       } else {
         getid = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
         def jsonObject01 = jsonSlurper.parseText(getid)
         blueprintid = jsonObject01.appTemplate.id
 
-
       }
-
     }
-
   }
 
 
@@ -659,7 +653,6 @@ node ('docker-slave') {
       ]
       echo morpheusApp.buildApp(morpheusUrl01, postBody, "${bearer}")
       }
-
     }
 
 }
