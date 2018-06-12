@@ -374,8 +374,9 @@ node ('docker-slave') {
       def jsonSlurper = new JsonSlurper()
       def jsonObject = jsonSlurper.parseText(Morpheusret01)
 
-      println jsonObject.appTemplates[0].name 
+      def blueprint = new jsonObject.appTemplates[0].name
 
+      println blueprint 
 
 
 
