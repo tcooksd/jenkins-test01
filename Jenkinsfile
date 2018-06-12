@@ -373,9 +373,12 @@ node ('docker-slave') {
 
       def jsonSlurper = new JsonSlurper()
       def jsonObject = jsonSlurper.parseText(Morpheusret01)
-      def blueprint = jsonObject.appTemplates[0].name
+      def blueprint = jsonObject.appTemplates
+      for ( e in blueprint ) {
+        println e.name
+      }
 
-      echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
+      /* echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}") */ 
 
 
 
