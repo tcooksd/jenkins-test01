@@ -18,6 +18,7 @@ node ('docker-slave') {
       LC_ALL = en_US.UTF-8
     }
     def blueprintid = ""
+    blueprintname = "test01"
 
 
 
@@ -377,7 +378,7 @@ node ('docker-slave') {
 
       def availblueprnt = ""
       for ( e in blueprint ) {
-        if ( e.name == 'test01' ) {
+        if ( e.name == "${blueprintname}" ) {
           availblueprnt = e.name
         }
       }
