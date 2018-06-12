@@ -27,7 +27,7 @@ node ('docker-slave') {
      *  */
       withCredentials([string(credentialsId: 'sandboxauth', variable: 'bearer')]) {
       String morpheusUrl = "${applianceUrl}/api/app-templates"
-      Map<?, ?> postBody =
+      Map<?, ?> postBody = [
        "image": "/assets/apps/template.png",
         "tiers": [
           "App": [
