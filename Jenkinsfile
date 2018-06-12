@@ -371,6 +371,7 @@ node ('docker-slave') {
 
       Morpheusret01 = morpheusApp.pullJson(morpheusUrl, "${bearer}")
 
+      def jsonSlurper = new JsonSlurper()
       def jsonObject = jsonSlurper.parseText(Morpheusret01)
 
       println jsonObject
