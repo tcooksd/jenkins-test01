@@ -366,7 +366,9 @@ node ('docker-slave') {
       ]
 
       Morpheusret01 = morpheusApp.pullJson(morpheusUrl, "${bearer}")
-      print Morpheusret01.getClass()
+      String fileContents = new File(Morpheusret01).getText('UTF-8')
+
+
 
 }
 }
