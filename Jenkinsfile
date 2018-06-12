@@ -22,7 +22,7 @@ node ('docker-slave') {
 
 
 
-    stage('Provision Dev App') {
+    stage('Build Template') {
     /*
      *
      *
@@ -388,7 +388,7 @@ node ('docker-slave') {
       } else {
         getid = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
         def jsonObject01 = jsonSlurper.parseText(getid)
-        println jsonObject01
+        println jsonObject01.appTemplate.id
 
       }
     }
