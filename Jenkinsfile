@@ -380,7 +380,7 @@ node ('docker-slave') {
           availblueprnt = e.name
         }
 
-
+        println availblueprnt
         /* println availblueprnt.getClass() */
        if ( availblueprnt != 'test01') {
          echo "starting manual print from here"
