@@ -380,8 +380,12 @@ node ('docker-slave') {
           availblueprnt = e.name
         }
       }
-      echo "testing available blueprint " + availblueprnt
-      
+
+      if ( availblueprnt !=null) {
+        echo "testing available blueprint " + availblueprnt
+      }
+
+
         /* println availblueprnt.getClass() */
 
           /* echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}") */
