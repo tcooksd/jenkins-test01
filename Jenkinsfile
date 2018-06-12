@@ -395,7 +395,7 @@ node ('docker-slave') {
       }
 
     }
-    echo "${blueprintid}"
+
   }
 
 
@@ -658,7 +658,7 @@ node ('docker-slave') {
         ],
         "id": 62
       ]
-
+      echo "${blueprintid}"
       echo morpheusApp.buildApp(morpheusUrl01, postBody, "${bearer}")
       }
 
