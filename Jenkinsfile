@@ -377,6 +377,8 @@ node ('docker-slave') {
       for ( e in blueprint ) {
         if ( e.name == 'test01' ) {
           println e.name
+        } else {
+          echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
         }
       }
 
