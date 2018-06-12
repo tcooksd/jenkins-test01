@@ -380,11 +380,12 @@ node ('docker-slave') {
           availblueprnt = e.name
         }
 
-        if ( availblueprnt != 'test01') {
+        println availblueprnt
+      /*  if ( availblueprnt != 'test01') {
           echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
         }
 
-        }
+        } */
 
 
       /* echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}") */
