@@ -389,8 +389,10 @@ node ('docker-slave') {
         getid = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
         def jsonObject01 = jsonSlurper.parseText(getid)
         blueprintid = jsonObject01.appTemplate.id
+        echo "${blueprintid}"
 
       }
+
     }
   }
 
@@ -656,7 +658,7 @@ node ('docker-slave') {
       ]
 
       echo morpheusApp.buildApp(morpheusUrl01, postBody, "${bearer}")
-      echo "${blueprintid}" 
+      echo "${blueprintid}"
       }
 
     }
