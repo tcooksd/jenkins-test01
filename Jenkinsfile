@@ -384,7 +384,7 @@ node ('docker-slave') {
       if ( availblueprnt == 'test01') {
         echo "testing available blueprint " + availblueprnt
       } else {
-        echo "blue print already exists."
+        echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
       }
 
 
