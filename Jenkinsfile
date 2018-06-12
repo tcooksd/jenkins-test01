@@ -386,7 +386,8 @@ node ('docker-slave') {
       if ( availblueprnt == 'test01') {
         echo "testing available blueprint " + availblueprnt
       } else {
-        echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
+        getid = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
+        println getid
       }
     }
   }
