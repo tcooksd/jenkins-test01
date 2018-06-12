@@ -18,14 +18,16 @@ node ('docker-slave') {
     /* define template id initial global var */
     def blueprintid = ""
     /* define template name */
-    blueprintname = "test01"
+    blueprintName = "test01"
+
+    applianceUrl = "https://sandbox.morpheusdata.com"
 
     stage('Build Template') {
     /*  Build Template
      *  */
       withCredentials([string(credentialsId: 'sandboxauth', variable: 'bearer')]) {
-      String morpheusUrl = 'https://sandbox.morpheusdata.com/api/app-templates'
-      Map<?, ?> postBody = [
+      String morpheusUrl = "${applianceUrl}/api/app-templates"
+      Map<?, ?> postBody = 
        "image": "/assets/apps/template.png",
         "tiers": [
           "App": [
@@ -354,7 +356,7 @@ node ('docker-slave') {
         ],
         "environment": "Dev",
         "templateName": "nodexpress",
-        "name": "${blueprintname}",
+        "name": "${blueprintName}",
         "templateImage": "",
         "type": "morpheus",
         "category": "APP",
@@ -373,12 +375,12 @@ node ('docker-slave') {
       /* Check to see if template exists */
       def availblueprnt = ""
       for ( e in blueprint ) {
-        if ( e.name == "${blueprintname}" ) {
+        if ( e.name == "${blueprintName}" ) {
           availblueprnt = e.name
         }
       }
 
-      if ( availblueprnt == "${blueprintname}") {
+      if ( availblueprnt == "${blueprintName}") {
         echo "Blueprint is already available. " + availblueprnt
       } else {
         getid = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
@@ -636,7 +638,7 @@ node ('docker-slave') {
           ]
         ],
         "environment": "Dev",
-        "templateName": "${blueprintname}",
+        "templateName": "${blueprintName}",
         "name": "tcooktest01",
         "templateImage": "",
         "type": "morpheus",
