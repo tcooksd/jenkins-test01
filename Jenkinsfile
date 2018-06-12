@@ -374,7 +374,7 @@ node ('docker-slave') {
       def jsonSlurper = new JsonSlurper()
       def jsonObject = jsonSlurper.parseText(Morpheusret01)
 
-      println jsonObject.appTemplates.getClass()
+      println jsonObject.appTemplates.length 
 
 
 
