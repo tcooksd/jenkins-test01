@@ -53,7 +53,7 @@ node ('docker-slave') {
       if ( availblueprnt == "${blueprintName}") {
         echo "Blueprint is already available. " + availblueprnt
       } else {
-        getid = morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
+        getid = morpheusApp.buildApp(morpheusUrl, postBody01, "${bearer}")
         def jsonObject01 = jsonSlurper.parseText(getid)
         blueprintid = jsonObject01.appTemplate.id
 
