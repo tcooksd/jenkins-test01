@@ -1,3 +1,5 @@
+
+
 blueprintName = "test01"
 postBody01 = [
  "image": "/assets/apps/template.png",
