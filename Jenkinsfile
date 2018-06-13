@@ -32,7 +32,7 @@ node ('docker-slave') {
      *  */
       withCredentials([string(credentialsId: 'sandboxauth', variable: 'bearer')]) {
       String morpheusUrl = "${applianceUrl}/api/app-templates"
-      Map<?, ?> morphuesTemplate("${blueprintName}").postBody01
+      Map<?, ?> morphuesTemplate(blueprintName).postBody01
       /* Use the morpheusApp module to pars json for current values  */
       Morpheusret01 = morpheusApp.pullJson(morpheusUrl, "${bearer}")
 
