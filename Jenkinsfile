@@ -34,7 +34,7 @@ node ('docker-slave') {
      *  */
       withCredentials([string(credentialsId: 'sandboxauth', variable: 'bearer')]) {
       String morpheusUrl = "${applianceUrl}/api/app-templates"
-      Map<?, ?> newtest.postBody01()
+      Map<?, ?> newtest
       /* Use the morpheusApp module to pars json for current values  */
       Morpheusret01 = morpheusApp.pullJson(morpheusUrl, "${bearer}")
 
