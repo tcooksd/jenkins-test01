@@ -1,3 +1,4 @@
+load "Jenkinsfile.groovy"
 postBody01 = [
  "image": "/assets/apps/template.png",
   "tiers": [
