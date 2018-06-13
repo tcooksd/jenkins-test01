@@ -1,7 +1,3 @@
-
-
-def morpheusTemplate(String blueprintName) {
-  echo "test of tcvook"
 postBody01 = [
  "image": "/assets/apps/template.png",
   "tiers": [
@@ -340,5 +336,3 @@ postBody01 = [
     "id": 489
   ]
 ]
-return postBody01
-}
