@@ -13,7 +13,6 @@ node ('docker-slave') {
 
     load "jsonValues.groovy"
 
-    echo test101
     /* Setup the naming schema for docker hub to commit new containers */
     sh "git rev-parse HEAD > commit-id"
     def commit_id = readFile('commit-id').trim()
@@ -33,7 +32,7 @@ node ('docker-slave') {
      *  */
       withCredentials([string(credentialsId: 'sandboxauth', variable: 'bearer')]) {
       String morpheusUrl = "${applianceUrl}/api/app-templates"
-      Map<?, ?> postBody01
+      Map<?, ?> morphuesTemplate("${blueprintName}").postBody01
       /* Use the morpheusApp module to pars json for current values  */
       Morpheusret01 = morpheusApp.pullJson(morpheusUrl, "${bearer}")
 

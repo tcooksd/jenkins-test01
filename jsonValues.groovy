@@ -1,4 +1,6 @@
-load "Jenkinsfile"
+
+
+def morphuesTemplate(String blueprintName) {
 postBody01 = [
  "image": "/assets/apps/template.png",
   "tiers": [
@@ -337,3 +339,5 @@ postBody01 = [
     "id": 489
   ]
 ]
+return postBody01
+}
