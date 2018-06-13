@@ -1,6 +1,6 @@
 
 
-def morphuesTemplate(String blueprintName) {
+def morpheusTemplate(String blueprintName) {
 postBody01 = [
  "image": "/assets/apps/template.png",
   "tiers": [
