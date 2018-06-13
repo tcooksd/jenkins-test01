@@ -11,7 +11,7 @@ node ('docker-slave') {
         checkout scm
     }
 
-    load "jsonValues.groovy"
+    constants = load "jsonValues.groovy"
 
     /* Setup the naming schema for docker hub to commit new containers */
     sh "git rev-parse HEAD > commit-id"
@@ -27,7 +27,7 @@ node ('docker-slave') {
 
     applianceUrl = "https://sandbox.morpheusdata.com"
 
-    newtest = morpheusTemplate(blueprintName).postBody01
+    newtest = constants.morpheusTemplate(blueprintName)
 
     stage('Build Template') {
     /*  Build Template
