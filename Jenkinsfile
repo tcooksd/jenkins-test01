@@ -4,6 +4,10 @@ node ('docker-slave') {
 
     def app
 
+    load "${rootDir}@script/jsonValues.groovy"
+
+    echo test101
+
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
         checkout scm
@@ -393,7 +397,7 @@ node ('docker-slave') {
 
     stage('Provision Dev App') {
       withCredentials([string(credentialsId: 'sandboxauth', variable: 'bearer')]) {
-        String morpheusUrl01 = 'https://sandbox.morpheusdata.com/api/apps'
+        String morpheusUrl01 = "${applianceUrl}/api/apps"
         Map<?, ?> postBody =   [
         "image": "/assets/apps/template.png",
         "tiers": [
