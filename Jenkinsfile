@@ -4,7 +4,7 @@ node ('docker-slave') {
 
     def app
 
-    load "${rootDir}@script/jsonValues.groovy"
+    load "jsonValues.groovy"
 
     echo test101
 
