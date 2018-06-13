@@ -4,14 +4,16 @@ node ('docker-slave') {
 
     def app
 
-    load "jsonValues.groovy"
 
-    echo test101
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
         checkout scm
     }
+
+    load "jsonValues.groovy"
+
+    echo test101
     /* Setup the naming schema for docker hub to commit new containers */
     sh "git rev-parse HEAD > commit-id"
     def commit_id = readFile('commit-id').trim()
