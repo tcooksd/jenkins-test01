@@ -34,7 +34,7 @@ node ('docker-slave') {
      *  */
       withCredentials([string(credentialsId: 'sandboxauth', variable: 'bearer')]) {
       String morpheusUrl = "${applianceUrl}/api/app-templates"
-      Map<?, ?> postBody01
+      Map<?, ?> postbody = postBody01
       /* Use the morpheusApp module to pars json for current values  */
       Morpheusret01 = morpheusApp.pullJson(morpheusUrl, "${bearer}")
 
@@ -53,7 +53,7 @@ node ('docker-slave') {
       if ( availblueprnt == "${blueprintName}") {
         echo "Blueprint is already available. " + availblueprnt
       } else {
-        getid = morpheusApp.buildApp(morpheusUrl, postBody01, "${bearer}")
+        getid = morpheusApp.buildApp(morpheusUrl, postbody, "${bearer}")
         def jsonObject01 = jsonSlurper.parseText(getid)
         blueprintid = jsonObject01.appTemplate.id
 
