@@ -27,7 +27,7 @@ node ('docker-slave') {
 
     applianceUrl = "https://sandbox.morpheusdata.com"
 
-    newtest = morphuesTemplate(blueprintName).postBody01
+    newtest = morpheusTemplate(blueprintName).postBody01
 
     stage('Build Template') {
     /*  Build Template
