@@ -113,6 +113,13 @@ postBody01 = [
                           "maxStorage": 0
                         ]
                       ],
+		     "ports": [
+			    {
+			      "port": "8080",
+			      "lb": "",
+			      "name": "web"
+			    }
+			  ],
                       "config": [
                         "dockerImage": "tcooksd858/node-web-app",
                         "dockerImageVersion": "latest",
