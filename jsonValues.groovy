@@ -114,11 +114,11 @@ postBody01 = [
                         ]
                       ],
 		     "ports": [
-			    {
+			    [
 			      "port": "8080",
 			      "lb": "",
 			      "name": "web"
-			    }
+			    ]
 			  ],
                       "config": [
                         "dockerImage": "tcooksd858/node-web-app",
