@@ -13,6 +13,7 @@ node ('docker-slave') {
 
     constants = load "jsonValues.groovy"
 
+    sh "env | sort"
     /* Setup the naming schema for docker hub to commit new containers */
     sh "git rev-parse HEAD > commit-id"
     def commit_id = readFile('commit-id').trim()
