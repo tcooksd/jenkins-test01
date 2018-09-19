@@ -2,5 +2,5 @@ import groovy.json.*
 
 node ('docker-slave') {
 
-    println("tcooktest")
+    println(env)
 }
