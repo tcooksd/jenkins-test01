@@ -2,7 +2,7 @@ import groovy.json.*
 
 node ('docker-slave') {
 
-    stage(setup) {
+    stage('setup') {
       sh "env | sort"
     }
 }
