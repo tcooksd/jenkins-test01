@@ -23,7 +23,7 @@ node ('docker-slave') {
     }
     /* define template id initial global var */
     def blueprintid = ""
-    /* define template name */
+    /* define template name 1*/
     blueprintName = "test01"
 
     applianceUrl = "https://sandbox.morpheusdata.com"
