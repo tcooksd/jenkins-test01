@@ -1,4 +1,6 @@
-blueprintName = "test01"
+constants = load "Jenkinsfile"
+
+blueprintName = "test02"
 postBody01 = [
  "image": "/assets/apps/template.png",
   "tiers": [
