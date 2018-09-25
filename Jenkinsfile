@@ -29,15 +29,10 @@ node ('docker-slave') {
     applianceUrl = "https://sandbox.morpheusdata.com"
 
 
-
-
-
-
     stage('Build Template') {
     /*  Build Template
      *  */
-      withCredentials([string(credentialsId: 'sandboxauth', variable: 'bearer')]) {
-      String morpheusUrl = "${applianceUrl}/api/app-templates"
+      
       Map<?, ?> postbody = postBody01
       /* Use the morpheusApp module to pars json for current values  */
       Morpheusret01 = MorpheusJson.buildAppJson(morpheusUrl)
