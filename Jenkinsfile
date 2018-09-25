@@ -1,6 +1,6 @@
 import groovy.json.*
 
-import MorpheusJso1n.*
+@Library('github.com/tcooksd/blueprint-lib.git@master')
 
 node ('docker-slave') {
 
