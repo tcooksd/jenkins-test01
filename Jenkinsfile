@@ -1,8 +1,9 @@
 import groovy.json.*
 
-@Library('github.com/tcooksd/blueprint-lib.git@master')
+
 
 node ('docker-slave') {
+    @Library('github.com/tcooksd/blueprint-lib.git@master')
 
     def app
 
