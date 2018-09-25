@@ -1,6 +1,6 @@
 import groovy.json.*
 
-import MorpheusJson.* 
+import MorpheusJson.*
 
 node ('docker-slave') {
 
@@ -34,7 +34,7 @@ node ('docker-slave') {
     stage('Build Template') {
     /*  Build Template
      *  */
-        def buildAppJson = new buildAppJson()
+        
 
 
         Map<?, ?> postbody = postBody01
