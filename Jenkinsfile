@@ -36,7 +36,7 @@ node ('docker-slave') {
 
       Map<?, ?> postbody = postBody01
       /* Use the morpheusApp module to pars json for current values  */
-      Morpheusret01 = MorpheusJson.buildAppJson(postbody)
+      Morpheusret01 = MorpheusJson.buildAppJson("testoutput")
 
       println Morpheusret01
 
