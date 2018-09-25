@@ -34,12 +34,12 @@ node ('docker-slave') {
     stage('Build Template') {
     /*  Build Template
      *  */
-        
+
 
 
         Map<?, ?> postbody = postBody01
       /* Use the morpheusApp module to pars json for current values  */
-        Morpheusret01 = buildAppJson(postbody)
+        Morpheusret01 = MorpheusJson.buildAppJson(postbody)
 
         println Morpheusret01
 
