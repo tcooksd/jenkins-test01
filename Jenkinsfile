@@ -33,10 +33,10 @@ node ('docker-slave') {
     /*  Build Template
      *  */
       withCredentials([string(credentialsId: 'sandboxauth', variable: 'bearer')]) {
-      
+
       Map<?, ?> postbody = postBody01
       /* Use the morpheusApp module to pars json for current values  */
-      Morpheusret01 = MorpheusJson.buildAppJson(morpheusUrl)
+      Morpheusret01 = MorpheusJson.buildAppJson(postbody)
 
       println Morpheusret01
 
