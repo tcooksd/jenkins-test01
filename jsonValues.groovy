@@ -1,4 +1,3 @@
-constants = load "Jenkinsfile"
 
 blueprintName = "test02"
 postBody01 = [
