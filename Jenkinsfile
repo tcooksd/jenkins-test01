@@ -1,5 +1,6 @@
 import groovy.json.*
 
+
 node ('docker-slave') {
 
     def app
@@ -32,15 +33,15 @@ node ('docker-slave') {
     stage('Build Template') {
     /*  Build Template
      *  */
-      withCredentials([string(credentialsId: 'sandboxauth', variable: 'bearer')]) {
+        def MorpheusJson = new MorpheusJson() 
 
-      Map<?, ?> postbody = postBody01
+
+        Map<?, ?> postbody = postBody01
       /* Use the morpheusApp module to pars json for current values  */
-      Morpheusret01 = MorpheusJson.buildAppJson(postbody)
+        Morpheusret01 = MorpheusJson.buildAppJson(postbody)
 
-      println Morpheusret01
+        println Morpheusret01
 
 
     }
   }
-}
