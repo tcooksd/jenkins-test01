@@ -1,4 +1,5 @@
-blueprintName = "test01"
+
+blueprintName = "test02"
 postBody01 = [
  "image": "/assets/apps/template.png",
   "tiers": [
