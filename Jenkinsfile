@@ -1,6 +1,6 @@
 import groovy.json.*
 
-import MorpheusJson.*
+import MorpheusJso1n.*
 
 node ('docker-slave') {
 
