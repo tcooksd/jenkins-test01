@@ -1,7 +1,7 @@
 import groovy.json.*
 @Library('MorpheusJson')
 
-import MorpheusJson.Application01()
+import MorpheusJson.buildAppJson()
 
 node ('docker-slave') {
 
@@ -35,12 +35,12 @@ node ('docker-slave') {
     stage('Build Template') {
     /*  Build Template
      *  */
-        def MorpheusJson = new MorpheusJson()
+        def buildAppJson = new buildAppJson()
 
 
         Map<?, ?> postbody = postBody01
       /* Use the morpheusApp module to pars json for current values  */
-        Morpheusret01 = MorpheusJson.buildAppJson(postbody)
+        Morpheusret01 = buildAppJson(postbody)
 
         println Morpheusret01
 
