@@ -1,7 +1,6 @@
 import groovy.json.*
 
 
-import MorpheusJson.buildAppJson
 
 node ('docker-slave') {
 
