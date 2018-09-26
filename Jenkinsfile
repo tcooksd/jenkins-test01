@@ -42,7 +42,7 @@ node ('docker-slave') {
       /* Use the morpheusApp module to pars json for current values  */
         Morpheusret01 = MorpheusJson.buildAppJson('sfddfsf')
 
-        println Morpheusret01
+        echo Morpheusret01
 
 
     }
