@@ -42,6 +42,7 @@ node ('docker-slave') {
       /* Use the morpheusApp module to pars json for current values  */
 
         MorpheusJson 'Tim'
+        MorpheusJson ()
 
 
     }
