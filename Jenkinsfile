@@ -3,7 +3,7 @@ import groovy.json.*
 
 
 node {
-    
+
 
     def app
 
@@ -22,69 +22,70 @@ node {
 
            withCredentials([string(credentialsId: 'sandboxaut', variable: 'tcook-key')]) {
             String morpheusUrl = 'https://sandbox.morpheusdata.com/api/app-templates'
-	    Map<?, ?> postBody = {
+	    Map<?, ?> postBody =
+      [
   "id": 242,
-  "tiers": {
-    "Web": {
+  "tiers": [
+    "Web": [
       "instances": [
-        {
-          "instance": {
+        [
+          "instance": [
             "type": "tcookcent01",
             "cloud": "VMware Demo Cluster",
-            "layout": {
+            "layout": [
               "code": "f5f2dfad-0b4e-4f7b-ad6b-1fa9aac0e944",
               "id": 1004,
               "provisionTypeCode": "vmware",
               "name": "tcook01",
               "instanceVersion": "1.0"
-            },
+            ],
             "expireDays": 7,
             "name": "tcook-deployment-test",
             "description": "",
             "allowExisting": false,
-            "userGroup": {
+            "userGroup": [
               "id": ""
-            }
-          },
-          "environments": {
-            "Dev": {
-              "groups": {
-                "VMware": {
-                  "clouds": {
-                    "VMware Demo Cluster": {
-                      "servicePlanOptions": {
+            ]
+          ],
+          "environments": [
+            "Dev": [
+              "groups": [
+                "VMware": [
+                  "clouds": [
+                    "VMware Demo Cluster": [
+                      "servicePlanOptions": [
                         "forPlan": 159,
                         "maxCores": 1,
                         "coresPerSocket": 1,
                         "maxMemory": 2147483648
-                      },
-                      "backup": {
+                      ],
+                      "backup": [
                         "veeamManagedServer": "",
                         "createBackup": true,
                         "jobAction": "new",
                         "jobRetentionCount": "2",
                         "enabled": true,
                         "showScheduledBackupWarning": false
-                      },
-                      "instance": {
-                        "layout": {
+                      ],
+                      "instance": [
+                        "layout": [
                           "provisionTypeCode": "vmware",
                           "code": "f5f2dfad-0b4e-4f7b-ad6b-1fa9aac0e944",
                           "instanceVersion": "1.0",
                           "name": "tcook01",
                           "id": 1004
-                        },
+                        ],
                         "expireDays": 7,
                         "name": "tcook-deployment-test",
                         "description": "",
                         "allowExisting": false,
                         "type": "tcookcent01",
-                        "userGroup": {
+                        "userGroup": [
                           "id": ""
-                        }
-                      },
+                        ]
+                      ],
                       "volumes": [
-                        {
+                        [
                           "volumeCustomizable": true,
                           "readonlyName": false,
                           "controllerId": 507507,
@@ -104,38 +105,38 @@ node {
                           "resizeable": true,
                           "datastoreId": "auto",
                           "maxStorage": 21474836480
-                        }
+                        ]
                       ],
                       "ports": [
-                        {
+                        [
                           "port": "80",
                           "lb": "HTTP",
                           "name": "web"
-                        }
+                        ]
                       ],
                       "lockedFields": [
                         "loadBalancer.[externalPort:80].vipPort",
                         "loadBalancer.[externalPort:80].enabledCheck"
                       ],
                       "networkInterfaces": [
-                        {
+                        [
                           "ipMode": "",
                           "primaryInterface": true,
                           "showNetworkPoolLabel": true,
                           "showNetworkDhcpLabel": false,
-                          "network": {
+                          "network": [
                             "idName": "VLAN0002 - Internal Server",
-                            "pool": {
+                            "pool": [
                               "name": "10.30.20.0/22",
                               "id": 171
-                            },
+                            ],
                             "id": "network-11615",
                             "hasPool": true
-                          }
-                        }
+                          ]
+                        ]
                       ],
                       "loadBalancer": [
-                        {
+                        [
                           "externalAddressCheck": false,
                           "protocol": "HTTP",
                           "vipPort": "80",
@@ -147,46 +148,46 @@ node {
                           "id": 159,
                           "balanceMode": "leastconnections",
                           "externalPort": 80
-                        }
+                        ]
                       ],
                       "layoutSize": 2,
-                      "config": {
+                      "config": [
                         "resourcePoolId": 1080,
                         "createUser": true
-                      },
-                      "plan": {
+                      ],
+                      "plan": [
                         "code": "vm-2048",
                         "id": 159
-                      },
-                      "group": {
+                      ],
+                      "group": [
                         "id": 489
-                      },
-                      "deployment": {
+                      ],
+                      "deployment": [
                         "versionId": 136,
                         "id": 60
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "servicePlanOptions": {
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ],
+          "servicePlanOptions": [
             "forPlan": 159,
             "maxCores": 1,
             "coresPerSocket": 1,
             "maxMemory": 2147483648
-          },
-          "backup": {
+          ],
+          "backup": [
             "createBackup": true,
             "jobAction": "new",
             "jobRetentionCount": "2",
             "enabled": true,
             "showScheduledBackupWarning": false,
             "veeamManagedServer": ""
-          },
+          ],
           "volumes": [
-            {
+            [
               "volumeCustomizable": true,
               "readonlyName": false,
               "controllerId": 507507,
@@ -206,38 +207,38 @@ node {
               "resizeable": true,
               "datastoreId": "auto",
               "maxStorage": 21474836480
-            }
+            ]
           ],
           "ports": [
-            {
+            [
               "port": "80",
               "lb": "HTTP",
               "name": "web"
-            }
+            ]
           ],
           "lockedFields": [
             "loadBalancer.[externalPort:80].vipPort",
             "loadBalancer.[externalPort:80].enabledCheck"
           ],
           "networkInterfaces": [
-            {
+            [
               "ipMode": "",
               "primaryInterface": true,
               "showNetworkPoolLabel": true,
               "showNetworkDhcpLabel": false,
-              "network": {
+              "network": [
                 "idName": "VLAN0002 - Internal Server",
-                "pool": {
+                "pool": [
                   "id": 171,
                   "name": "10.30.20.0/22"
-                },
+                ],
                 "id": "network-11615",
                 "hasPool": true
-              }
-            }
+              ]
+            ]
           ],
           "loadBalancer": [
-            {
+            [
               "externalAddressCheck": false,
               "protocol": "HTTP",
               "vipPort": "80",
@@ -249,42 +250,42 @@ node {
               "id": 159,
               "balanceMode": "leastconnections",
               "externalPort": 80
-            }
+            ]
           ],
           "layoutSize": 2,
-          "config": {
+          "config": [
             "resourcePoolId": 1080,
             "createUser": true
-          },
-          "plan": {
+          ],
+          "plan": [
             "code": "vm-2048",
             "id": 159
-          },
-          "group": {
+          ],
+          "group": [
             "id": 489
-          },
-          "deployment": {
+          ],
+          "deployment": [
             "versionId": 136,
             "id": 60
-          }
-        }
+          ]
+        ]
       ],
       "tierIndex": 1
-    }
-  },
+    ]
+  ],
   "templateName": "tcook-demo01",
   "name": "tcook-app1",
-  "group": {
+  "group": [
     "id": 489,
     "name": "VMware"
-  },
+  ],
   "environment": "Dev",
   "envCode": "dev",
   "type": "morpheus",
-  "config": {
+  "config": [
     "isEC2": false,
     "isVpcSelectable": true
-  }
-}
+  ]
+]
 
     }
