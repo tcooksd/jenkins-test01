@@ -2,7 +2,7 @@ import groovy.json.*
 
 
 
-node ('docker-slave') {
+node {
     @Library('github.com/tcooksd/blueprint-lib')
 
     def app
