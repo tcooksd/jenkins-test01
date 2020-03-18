@@ -3,7 +3,7 @@ import groovy.json.*
 
 
 node {
-    @Library('github.com/tcooksd/blueprint-lib')
+    
 
     def app
 
