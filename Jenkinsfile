@@ -287,5 +287,6 @@ node {
     "isVpcSelectable": true
   ]
 ]
+}
 
     }
