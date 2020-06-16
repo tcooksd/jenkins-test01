@@ -55,7 +55,7 @@ node {
                       ],
                       "expireDays": 7,
                       "configEnabled": false,
-                      "name": "$[userInitials]-$[cloudCode]-$[type]-$[sequence+1035]",
+                      "name": "",
                       "allowExisting": false,
                       "type": "apache",
                       "userGroup": [
