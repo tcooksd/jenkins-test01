@@ -400,7 +400,7 @@ node {
             ]
           ]
         ],
-        "name": "5919-tcook-test",
+        "name": "tcook-jenkins-test01",
         "type": "morpheus",
         "config": [
           "isVpcSelectable": false,
