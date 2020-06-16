@@ -153,7 +153,7 @@ node {
                               ],
                               "expireDays": "7",
                               "configEnabled": true,
-                              "name": "$[userInitials]-sb-$[account]-$[type]-$[sequence+4000]",
+                              "name": "",
                               "allowExisting": false,
                               "type": "tcookest",
                               "userGroup": [
