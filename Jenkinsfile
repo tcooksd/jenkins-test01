@@ -21,7 +21,7 @@ node {
          *  */
 
            withCredentials([string(credentialsId: 'tcook01', variable: 'tcook-key')]) {
-            String morpheusUrl = 'https://sandbox.morpheusdata.com/api/app-templates'
+            String morpheusUrl = 'https://sandbox.morpheusdata.com/api/blueprints'
 	    Map<?, ?> postBody =
       [
         "image": "/assets/apps/template.png",
