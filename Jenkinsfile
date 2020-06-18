@@ -254,10 +254,6 @@ node {
 "name": "tcook-jenkins-test1",
 "templateImage": "",
 "type": "morpheus",
-"config": [
-  "isVpcSelectable": true,
-  "isEC2": false
-],
 "image": "/assets/apps/template.png"
 ]
 	echo morpheusApp.buildApp(morpheusUrl, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
