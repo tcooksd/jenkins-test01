@@ -13,6 +13,8 @@ node {
         /* Let's make sure we have the repository cloned to our workspace */
         checkout scm
     }
+    
+    constants = load "jsonValues.groovy"
 
     stage('Provision Dev App') {
         /*
