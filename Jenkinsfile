@@ -260,7 +260,7 @@ node {
 ],
 "image": "/assets/apps/template.png"
 ]
-	echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
+	echo morpheusApp.buildApp(morpheusUrl, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
         }
     }
     }
