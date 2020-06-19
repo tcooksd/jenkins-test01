@@ -247,7 +247,7 @@ node {
             ]
           ]
         ],
-        "name": "tcook-jenkins-test1",
+        "name": "tcook-jenkins-test2",
         "templateImage": "",
         "type": "morpheus",
         "image": "/assets/apps/template.png"
@@ -279,7 +279,7 @@ node {
                  ],
                  "expireDays": 7,
                  "configEnabled": false,
-                 "name": "tcook-jenkins-apache",
+                 "name": "tcook-jenkins-apache1",
                  "allowExisting": false,
                  "userGroup": [
                    "id": ""
@@ -534,7 +534,7 @@ node {
                  ],
                  "expireDays": 7,
                  "configEnabled": false,
-                 "name": "tcook-jenkins-mysql01",
+                 "name": "tcook-jenkins-mysql1",
                  "allowExisting": false,
                  "userGroup": [
                    "id": ""
@@ -700,7 +700,7 @@ node {
            "tierIndex": 2
          ]
         ],
-        "templateName": "tcook-jenkins-test1",
+        "templateName": "tcook-jenkins-test2",
         "name": "tcook-jenkins-app1",
         "group": [
          "id": 779,
