@@ -247,7 +247,7 @@ node {
             ]
           ]
         ],
-        "name": "tcook-jenkins-test2",
+        "name": "tcook-jenkins-test1",
         "templateImage": "",
         "type": "morpheus",
         "image": "/assets/apps/template.png"
