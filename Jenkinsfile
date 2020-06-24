@@ -284,7 +284,7 @@ node {
             ]
           ]
         ],
-        "name": "tcook-jenkins-test1",
+        "name": "tcook-jenkins-test2",
         "templateImage": "",
         "type": "morpheus",
       ]
@@ -774,7 +774,7 @@ node {
             "tierIndex": 2
           ]
         ],
-        "templateName": "tcook-jenkins-test1",
+        "templateName": "tcook-jenkins-test2",
         "name": "tcook-app2",
         "group": [
           "id": 779,
