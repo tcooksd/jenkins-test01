@@ -297,7 +297,7 @@ node {
       String morpheusUrl1 = 'https://sandbox.morpheusdata.com/api/apps'
       Map<?, ?> postBody =
       [
-        "id": 307,
+        "id": 308,
         "tiers": [
           "App": [
             "instances": [
@@ -314,7 +314,7 @@ node {
                   ],
                   "expireDays": 7,
                   "configEnabled": false,
-                  "name": "",
+                  "name": "tcook-apache-jenkins01",
                   "allowExisting": false,
                   "userGroup": [
                     "id": ""
@@ -333,16 +333,20 @@ node {
                               "jobAction": "new",
                               "jobRetentionCount": "2",
                               "enabled": true,
-                              "showScheduledBackupWarning": false
+                              "showScheduledBackupWarning": true,
+                              "providerBackupType": -1
                             ],
                             "instance": [
                               "layout": [
+                                "provisionTypeCode": "vmware",
                                 "code": "apache-vmware-2.4-single",
+                                "instanceVersion": "2.4",
+                                "name": "VMware Apache on Ubuntu 14.04",
                                 "id": 72
                               ],
                               "expireDays": 7,
                               "configEnabled": false,
-                              "name": "",
+                              "name": "tcook-apache-01",
                               "allowExisting": false,
                               "type": "apache",
                               "userGroup": [
@@ -415,7 +419,36 @@ node {
                               ]
                             ],
                             "replicationGroup": [
-                              "providerMethod": "new"
+                              "providerMethod": "new",
+                              "providerId": -1
+                            ],
+                            "ports": [
+                              [
+                                "code": "apache.80",
+                                "visible": true,
+                                "internalPort": 80,
+                                "loadBalancePort": null,
+                                "loadBalanceProtocol": "http",
+                                "sortOrder": 0,
+                                "name": "Http",
+                                "id": 8,
+                                "shortName": "http",
+                                "externalPort": 80,
+                                "loadBalance": true
+                              ],
+                              [
+                                "code": "apache.443",
+                                "visible": true,
+                                "internalPort": 443,
+                                "loadBalancePort": null,
+                                "loadBalanceProtocol": "https",
+                                "sortOrder": 1,
+                                "name": "Https",
+                                "id": 9,
+                                "shortName": "https",
+                                "externalPort": 443,
+                                "loadBalance": true
+                              ]
                             ],
                             "plan": [
                               "code": "vm-1024",
@@ -427,6 +460,9 @@ node {
                             ],
                             "group": [
                               "id": 779
+                            ],
+                            "deployment": [
+                              "id": 69
                             ]
                           ]
                         ]
@@ -436,12 +472,13 @@ node {
                 ],
                 "backup": [
                   "backupRepository": 2,
+                  "veeamManagedServer": "",
                   "createBackup": true,
                   "jobAction": "new",
                   "jobRetentionCount": "2",
                   "enabled": true,
-                  "showScheduledBackupWarning": false,
-                  "veeamManagedServer": ""
+                  "showScheduledBackupWarning": true,
+                  "providerBackupType": -1
                 ],
                 "networkInterfaces": [
                   [
@@ -509,7 +546,36 @@ node {
                   ]
                 ],
                 "replicationGroup": [
-                  "providerMethod": "new"
+                  "providerMethod": "new",
+                  "providerId": -1
+                ],
+                "ports": [
+                  [
+                    "code": "apache.80",
+                    "visible": true,
+                    "internalPort": 80,
+                    "loadBalancePort": null,
+                    "loadBalanceProtocol": "http",
+                    "sortOrder": 0,
+                    "name": "Http",
+                    "id": 8,
+                    "shortName": "http",
+                    "externalPort": 80,
+                    "loadBalance": true
+                  ],
+                  [
+                    "code": "apache.443",
+                    "visible": true,
+                    "internalPort": 443,
+                    "loadBalancePort": null,
+                    "loadBalanceProtocol": "https",
+                    "sortOrder": 1,
+                    "name": "Https",
+                    "id": 9,
+                    "shortName": "https",
+                    "externalPort": 443,
+                    "loadBalance": true
+                  ]
                 ],
                 "plan": [
                   "code": "vm-1024",
@@ -522,37 +588,8 @@ node {
                 "group": [
                   "id": 779
                 ],
-                "ports": [
-                  [
-                    "id": 8,
-                    "code": "apache.80",
-                    "name": "Http",
-                    "shortName": "http",
-                    "internalPort": 80,
-                    "externalPort": 80,
-                    "loadBalancePort": null,
-                    "sortOrder": 0,
-                    "loadBalanceProtocol": "http",
-                    "loadBalance": true,
-                    "visible": true
-                  ],
-                  [
-                    "id": 9,
-                    "code": "apache.443",
-                    "name": "Https",
-                    "shortName": "https",
-                    "internalPort": 443,
-                    "externalPort": 443,
-                    "loadBalancePort": null,
-                    "sortOrder": 1,
-                    "loadBalanceProtocol": "https",
-                    "loadBalance": true,
-                    "visible": true
-                  ]
-                ],
                 "deployment": [
-                  "id": 69,
-                  "versionId": 157
+                  "id": 69
                 ]
               ]
             ],
@@ -573,7 +610,7 @@ node {
                   ],
                   "expireDays": 7,
                   "configEnabled": true,
-                  "name": "",
+                  "name": "tcook-jenkins-mysql01",
                   "allowExisting": false,
                   "userGroup": [
                     "id": ""
@@ -592,7 +629,7 @@ node {
                               "jobAction": "new",
                               "jobRetentionCount": "2",
                               "enabled": true,
-                              "showScheduledBackupWarning": false
+                              "showScheduledBackupWarning": true
                             ],
                             "instance": [
                               "layout": [
@@ -604,7 +641,7 @@ node {
                               ],
                               "expireDays": 7,
                               "configEnabled": true,
-                              "name": "",
+                              "name": "tcook-mysql01",
                               "allowExisting": false,
                               "type": "mysql2",
                               "userGroup": [
@@ -672,8 +709,9 @@ node {
                   "jobAction": "new",
                   "jobRetentionCount": "2",
                   "enabled": true,
-                  "showScheduledBackupWarning": false,
-                  "veeamManagedServer": ""
+                  "showScheduledBackupWarning": true,
+                  "veeamManagedServer": "",
+                  "providerBackupType": -1
                 ],
                 "networkInterfaces": [
                   [
@@ -745,6 +783,10 @@ node {
         "environment": "Dev",
         "envCode": "dev",
         "type": "morpheus",
+        "config": [
+          "isEC2": false,
+          "isVpcSelectable": true
+        ]
       ]
 
         echo morpheusApp.buildApp(morpheusUrl1, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
