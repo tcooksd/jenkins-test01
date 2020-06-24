@@ -573,7 +573,7 @@ node {
                   ],
                   "expireDays": 7,
                   "configEnabled": true,
-                  "name": "$[userInitials]-$[cloudCode]-$[type]-$[sequence+1035]",
+                  "name": "",
                   "allowExisting": false,
                   "userGroup": [
                     "id": ""
