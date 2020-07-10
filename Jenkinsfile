@@ -289,9 +289,8 @@ node {
         "type": "morpheus",
       ]
         	apptest = morpheusApp.buildApp(morpheusUrl, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
-          def jsonString = apptest
-          def jsonObj = readJSON text: jsonString
-          echo jsonObj
+          def data = new JsonSlurperClassic().parseText(apptest)
+          echo data
 
         }
     }
