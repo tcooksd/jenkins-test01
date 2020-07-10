@@ -359,12 +359,12 @@ node {
                                 "showNetworkPoolLabel": true,
                                 "showNetworkDhcpLabel": false,
                                 "network": [
-                                  "idName": "VLAN0006 - Infoblox Managed Pool",
+                                  "idName": "VLAN0002 - Internal Server",
                                   "pool": [
-                                    "name": "10.30.26.0/24",
-                                    "id": 218
+                                    "name": "10.30.20.0/22",
+                                    "id": 171
                                   ],
-                                  "id": "network-11619",
+                                  "id": "network-11615",
                                   "hasPool": true
                                 ]
                               ]
@@ -655,12 +655,12 @@ node {
                                 "showNetworkPoolLabel": true,
                                 "showNetworkDhcpLabel": false,
                                 "network": [
-                                  "idName": "VLAN0006 - Infoblox Managed Pool",
+                                  "idName": "VLAN0002 - Internal Server",
                                   "pool": [
-                                    "name": "10.30.26.0/24",
-                                    "id": 218
+                                    "name": "10.30.20.0/22",
+                                    "id": 171
                                   ],
-                                  "id": "network-11619",
+                                  "id": "network-11615",
                                   "hasPool": true
                                 ]
                               ]
