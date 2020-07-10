@@ -291,7 +291,7 @@ node {
         	apptest = morpheusApp.buildApp(morpheusUrl, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
 
           def jsonSlurper = new JsonSlurper()
-          def jsonObject = jsonSlurper.parseText(apptest)
+          def jsonObject = jsonSlurper.parseText(apptest.blueprint)
           echo jsonObject.toString()
 
 
