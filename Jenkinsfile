@@ -288,11 +288,11 @@ node {
         "templateImage": "",
         "type": "morpheus",
       ]
-        	apptest = morpheusApp.buildApp(morpheusUrl, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
+        	//apptest = morpheusApp.buildApp(morpheusUrl, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
 
-          def jsonSlurper = new JsonSlurper()
-          def jsonObject = jsonSlurper.parseText(apptest)
-          print jsonObject.blueprint 
+        //  def jsonSlurper = new JsonSlurper()
+        //  def jsonObject = jsonSlurper.parseText(apptest)
+          //print jsonObject.blueprint
 
 
         }
@@ -795,7 +795,11 @@ node {
         ]
       ]
 
-    //    echo morpheusApp.buildApp(morpheusUrl1, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
+       apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
+
+       def jsonSlurper = new JsonSlurper()
+       def jsonObject = jsonSlurper.parseText(apptest2)
+       print jsonObject
      }
    }
   // stage('Provision deployment') {
