@@ -291,7 +291,7 @@ node {
         	echo morpheusApp.buildApp(morpheusUrl, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
           print "#############################"
           print "tcook test was here"
-          print "\n"
+          print "test"
           print "#############################"
         }
     }
