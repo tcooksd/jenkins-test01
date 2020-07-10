@@ -289,11 +289,10 @@ node {
         "type": "morpheus",
       ]
         	apptest = morpheusApp.buildApp(morpheusUrl, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
-        //  echo apptest
-          echo "#############################"
-          echo "tcook test was here"
-          echo "test"
-          echo "#############################"
+          def jsonString = apptest
+          def jsonObj = readJSON text: jsonString
+          echo ${jsonObj.success}
+
         }
     }
     stage('Provision Dev App') {
