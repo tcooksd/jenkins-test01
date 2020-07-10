@@ -292,7 +292,7 @@ node {
 
           def jsonSlurper = new JsonSlurper()
           def jsonObject = jsonSlurper.parseText(apptest)
-          echo jsonObject
+          echo jsonObject.tostring()
 
 
         }
