@@ -289,6 +289,10 @@ node {
         "type": "morpheus",
       ]
         	echo morpheusApp.buildApp(morpheusUrl, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
+          print "#############################"
+          print "tcook test was here"
+          print "\n"
+          print "#############################"
         }
     }
     stage('Provision Dev App') {
@@ -791,5 +795,13 @@ node {
 
         echo morpheusApp.buildApp(morpheusUrl1, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
      }
+   }
+   stage('Provision deployment') {
+
+     withCredentials([string(credentialsId: 'tcook01', variable: 'tcook-key')]) {
+     String morpheusUrl2 = 'https://sandbox.morpheusdata.com/api/instances/10150/deploy'
+     Map<?, ?> postBody =
+
+    }
    }
   }
