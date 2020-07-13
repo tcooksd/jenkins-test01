@@ -807,7 +807,7 @@ node {
           AvailableInstances = e.id
         }
       }
-       echo  AvailableInstances
+       print  AvailableInstances
      }
    }
   // stage('Provision deployment') {
