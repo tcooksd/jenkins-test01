@@ -804,7 +804,7 @@ node {
        def AvailableInstances = ""
        for ( e in instances01 ) {
         if ( e.name == "tcook-apache-jenkins01") {
-          AvailableInstances = e.name
+          AvailableInstances = e.id
         }
       }
        echo  AvailableInstances
