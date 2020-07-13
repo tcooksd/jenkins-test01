@@ -799,7 +799,7 @@ node {
        Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/instances", "117645d1-69ea-4778-bada-429bdbfe03c4")
        def jsonSlurper = new JsonSlurper()
        def jsonObject = jsonSlurper.parseText(Morpheusret01)
-       print jsonObject.instances
+       print jsonObject.instances[0].id
      }
    }
   // stage('Provision deployment') {
