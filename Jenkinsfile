@@ -807,7 +807,7 @@ node {
           AvailableInstances = e.name
         }
       }
-       echo  e.name 
+       echo  AvailableInstances.name 
      }
    }
   // stage('Provision deployment') {
