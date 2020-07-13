@@ -796,10 +796,10 @@ node {
       ]
 
        apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
-
+       Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/instances", "117645d1-69ea-4778-bada-429bdbfe03c4")
        def jsonSlurper = new JsonSlurper()
        def jsonObject = jsonSlurper.parseText(apptest2)
-       print jsonObject
+       print Morpheusret01
      }
    }
   // stage('Provision deployment') {
