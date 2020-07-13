@@ -807,15 +807,15 @@ node {
           InstanceID01 = e.id
         }
       }
-       print  InstanceID01
+      // print  InstanceID01
      }
    }
-  // stage('Provision deployment') {
-
+    stage('Provision deployment') {
+      print  InstanceID01
   //   withCredentials([string(credentialsId: 'tcook01', variable: 'tcook-key')]) {
 //     String morpheusUrl2 = 'https://sandbox.morpheusdata.com/api/instances/10150/deploy'
   //   Map<?, ?> postBody =
 
-  //  }
+   }
 //   }
   }
