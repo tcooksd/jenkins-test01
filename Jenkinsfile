@@ -801,13 +801,13 @@ node {
        def jsonObject = jsonSlurper.parseText(Morpheusret01)
 
        def instances01 = jsonObject.instances
-       def AvailableInstances = ""
+       def InstanceID01 = ""
        for ( e in instances01 ) {
         if ( e.name == "tcook-apache-jenkins01") {
-          AvailableInstances = e.id
+          InstanceID01 = e.id
         }
       }
-       print  AvailableInstances
+       print  InstanceID01
      }
    }
   // stage('Provision deployment') {
