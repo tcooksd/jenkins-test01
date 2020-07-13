@@ -799,7 +799,15 @@ node {
        Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/instances", "117645d1-69ea-4778-bada-429bdbfe03c4")
        def jsonSlurper = new JsonSlurper()
        def jsonObject = jsonSlurper.parseText(Morpheusret01)
-       print jsonObject.instances[0].name
+
+       def instances01 = jsonObject.instances
+       def AvailableInstances = ""
+       for ( e in instances01 ) {
+        if ( e.name == "tcook-apache-jenkins01") {
+          AvailableInstances = e.name
+        }
+      }
+       echo  e.name 
      }
    }
   // stage('Provision deployment') {
