@@ -796,21 +796,24 @@ node {
       ]
 
       // apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
-       Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/instances", "117645d1-69ea-4778-bada-429bdbfe03c4")
-       def jsonSlurper = new JsonSlurper()
-       def jsonObject = jsonSlurper.parseText(Morpheusret01)
 
-       def instances01 = jsonObject.instances
-       def InstanceID01 = ""
-       for ( e in instances01 ) {
-        if ( e.name == "tcook-apache-jenkins01") {
-          InstanceID01 = e.id
-        }
-      }
       // print  InstanceID01
-     }
-   }
+
+      }
+    }
     stage('Provision deployment') {
+
+      Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/instances", "117645d1-69ea-4778-bada-429bdbfe03c4")
+      def jsonSlurper = new JsonSlurper()
+      def jsonObject = jsonSlurper.parseText(Morpheusret01)
+
+      def instances01 = jsonObject.instances
+      def InstanceID01 = ""
+      for ( e in instances01 ) {
+       if ( e.name == "tcook-apache-jenkins01") {
+         InstanceID01 = e.id
+       }
+     }
       print  InstanceID01
   //   withCredentials([string(credentialsId: 'tcook01', variable: 'tcook-key')]) {
 //     String morpheusUrl2 = 'https://sandbox.morpheusdata.com/api/instances/10150/deploy'
