@@ -814,7 +814,16 @@ node {
          InstanceID01 = e.id
        }
      }
-      print  InstanceID01
+     withCredentials([string(credentialsId: 'tcook01', variable: 'tcook-key')]) {
+     String morpheusUrl1 = 'https://sandbox.morpheusdata.com/api/instances/10306/deploy'
+     Map<?, ?> postBody =
+     ["appDeploy":[
+        "deployType": "git",
+        "gitUrl": "https://github.com/tcooksd/web-app01.git",
+        "fetchUrl": null,
+        "gitRef": "master",
+        "userVersion": "1"
+      ]]
   //   withCredentials([string(credentialsId: 'tcook01', variable: 'tcook-key')]) {
 //     String morpheusUrl2 = 'https://sandbox.morpheusdata.com/api/instances/10150/deploy'
   //   Map<?, ?> postBody =
