@@ -228,7 +228,7 @@ node {
           ]
         ]
       ],
-      "name": "tcook-opencart02",
+      "name": "tcook-opencart03",
       "templateImage": "",
       "type": "morpheus"
     ]
@@ -609,8 +609,8 @@ node {
             "tierIndex": 2
           ]
         ],
-        "templateName": "tcook-opencart02",
-        "name": "tcook-opencart02",
+        "templateName": "tcook-opencart03",
+        "name": "tcook-opencart03",
         "group": [
           "id": 779,
           "name": "tcook"
