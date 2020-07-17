@@ -609,7 +609,7 @@ node {
             "tierIndex": 2
           ]
         ],
-        "templateName": "tcook-opencart01",
+        "templateName": "tcook-opencart02",
         "name": "tcook-opencart02",
         "group": [
           "id": 779,
