@@ -4,9 +4,7 @@ import groovy.json.*
 
 node {
 
-
     def app
-
 
 
     stage('Clone repository') {
@@ -22,258 +20,105 @@ node {
       String morpheusUrl = 'https://sandbox.morpheusdata.com/api/blueprints'
 	    Map<?, ?> postBody =
       [
-        "image": "/assets/apps/template.png",
-        "tiers": [
-          "App": [
-            "linkedTiers": [],
-            "tierIndex": 1,
-            "instances": [
-              [
-                "instance": [
-                  "type": "apache"
-                ],
-                "environments": [
-                  "Dev": [
-                    "groups": [
-                      "tcook": [
-                        "clouds": [
-                          "VMware Demo Cluster": [
-                            "backup": [
-                              "backupRepository": 2,
-                              "createBackup": true,
-                              "jobAction": "new",
-                              "jobRetentionCount": "2",
-                              "enabled": true,
-                              "showScheduledBackupWarning": true,
-                              "providerBackupType": -1,
-                              "veeamManagedServer": ""
-                            ],
-                            "instance": [
-                              "layout": [
-                                "code": "apache-vmware-2.4-single",
-                                "id": 72,
-                                "provisionTypeCode": "vmware",
-                                "name": "VMware Apache on Ubuntu 14.04",
-                                "instanceVersion": "2.4"
-                              ],
-                              "expireDays": 7,
-                              "configEnabled": false,
-                              "name": "",
-                              "allowExisting": false,
-                              "type": "apache",
-                              "userGroup": [
-                                "id": ""
-                              ]
-                            ],
-                            "networkInterfaces": [
-                              [
-                                "primaryInterface": true,
-                                "showNetworkPoolLabel": true,
-                                "showNetworkDhcpLabel": false,
-                                "network": [
-                                  "idName": "VLAN0002 - Internal Server",
-                                  "pool": [
-                                    "id": 171,
-                                    "name": "10.30.20.0/22"
-                                  ],
-                                  "id": "network-11615",
-                                  "hasPool": true
-                                ]
-                              ]
-                            ],
-                            "loadBalancer": [
-                              [
-                                "externalAddressCheck": false,
-                                "protocol": "http",
-                                "vipPort": 80,
-                                "vipName": "",
-                                "internalPort": 80,
-                                "loadBalancePort": null,
-                                "loadBalanceProtocol": "http",
-                                "vipHostname": "",
-                                "name": "",
-                                "id": "",
-                                "balanceMode": "leastconnections",
-                                "externalPort": 80
-                              ],
-                              [
-                                "externalAddressCheck": false,
-                                "protocol": "https",
-                                "vipPort": 443,
-                                "vipName": "",
-                                "internalPort": 443,
-                                "loadBalancePort": null,
-                                "loadBalanceProtocol": "https",
-                                "vipHostname": "",
-                                "name": "",
-                                "id": "",
-                                "balanceMode": "leastconnections",
-                                "externalPort": 443
-                              ]
-                            ],
-                            "volumes": [
-                              [
-                                "volumeCustomizable": true,
-                                "readonlyName": false,
-                                "maxIOPS": null,
-                                "index": 0,
-                                "hasDatastore": false,
-                                "minStorage": 2147483648,
-                                "vId": 62,
-                                "controllerMountPoint": "10:0:4:0",
-                                "size": 10,
-                                "name": "data",
-                                "rootVolume": true,
-                                "storageType": 1,
-                                "customMaxStorage": false,
-                                "datastoreId": "auto",
-                                "maxStorage": 10737418240
-                              ]
-                            ],
-                            "replicationGroup": [
-                              "providerMethod": "new",
-                              "providerId": -1
-                            ],
-                            "plan": [
-                              "code": "vm-1024",
-                              "id": 158
-                            ],
-                            "config": [
-                              "resourcePoolId": 1080,
-                              "createUser": true
-                            ],
-                            "group": [
-                              "id": 779
-                            ],
-                            "ports": [
-                              [
-                                "id": 8,
-                                "code": "apache.80",
-                                "name": "Http",
-                                "shortName": "http",
-                                "internalPort": 80,
-                                "externalPort": 80,
-                                "loadBalancePort": null,
-                                "sortOrder": 0,
-                                "loadBalanceProtocol": "http",
-                                "loadBalance": true,
-                                "visible": true
-                              ],
-                              [
-                                "id": 9,
-                                "code": "apache.443",
-                                "name": "Https",
-                                "shortName": "https",
-                                "internalPort": 443,
-                                "externalPort": 443,
-                                "loadBalancePort": null,
-                                "sortOrder": 1,
-                                "loadBalanceProtocol": "https",
-                                "loadBalance": true,
-                                "visible": true
-                              ]
-                            ],
-                            "deployment": [
-                              "id": 69
-                            ]
-                          ]
-                        ]
-                      ]
-                    ]
-                  ]
-                ]
-              ]
+      "image": "/assets/apps/template.png",
+      "tiers": [
+        "Web": [
+          "linkedTiers": [
+            "Database"
+          ],
+          "tierIndex": 1,
+          "tier": [
+            "bootOrder": 1,
+            "lockedFields": [
+              "bootOrder"
             ]
           ],
-          "Database": [
-            "linkedTiers": [],
-            "tierIndex": 2,
-            "instances": [
-              [
-                "instance": [
-                  "type": "mysql2"
-                ],
-                "environments": [
-                  "Dev": [
-                    "groups": [
-                      "tcook": [
-                        "clouds": [
-                          "VMware Demo Cluster": [
-                            "backup": [
-                              "backupRepository": 2,
-                              "veeamManagedServer": "",
-                              "createBackup": true,
-                              "jobAction": "new",
-                              "jobRetentionCount": "2",
-                              "enabled": true,
-                              "showScheduledBackupWarning": false
+          "instances": [
+            [
+              "instance": [
+                "type": "tcookest"
+              ],
+              "environments": [
+                "Dev": [
+                  "groups": [
+                    "tcook": [
+                      "clouds": [
+                        "VMware Demo Cluster": [
+                          "backup": [
+                            "backupRepository": 2,
+                            "veeamManagedServer": "",
+                            "createBackup": false,
+                            "jobAction": "new",
+                            "jobRetentionCount": "2",
+                            "enabled": true,
+                            "showScheduledBackupWarning": false
+                          ],
+                          "instance": [
+                            "layout": [
+                              "provisionTypeCode": "vmware",
+                              "code": "c45c4e7b-d8d4-4914-aa31-70cc4f5d0e89",
+                              "instanceVersion": "1",
+                              "name": "tcook5919",
+                              "id": 1254
                             ],
-                            "instance": [
-                              "layout": [
-                                "provisionTypeCode": "vmware",
-                                "code": "313abfe1-8297-4fad-832b-5daba6b9183f",
-                                "instanceVersion": "1",
-                                "name": "MySQL CentOS VMWare",
-                                "id": 967
-                              ],
-                              "expireDays": 7,
-                              "configEnabled": true,
-                              "name": "",
-                              "allowExisting": false,
-                              "type": "mysql2",
-                              "userGroup": [
-                                "id": ""
-                              ]
-                            ],
-                            "networkInterfaces": [
-                              [
-                                "ipMode": "",
-                                "primaryInterface": true,
-                                "showNetworkPoolLabel": true,
-                                "showNetworkDhcpLabel": false,
-                                "network": [
-                                  "idName": "VLAN0002 - Internal Server",
-                                  "pool": [
-                                    "name": "10.30.20.0/22",
-                                    "id": 171
-                                  ],
-                                  "id": "network-11615",
-                                  "hasPool": true
-                                ]
-                              ]
-                            ],
-                            "loadBalancer": [],
-                            "volumes": [
-                              [
-                                "vId": 922548,
-                                "volumeCustomizable": true,
-                                "readonlyName": false,
-                                "size": 10,
-                                "maxIOPS": null,
-                                "name": "root",
-                                "rootVolume": true,
-                                "storageType": 1,
-                                "datastoreId": "auto",
-                                "maxStorage": 10737418240
-                              ]
-                            ],
-                            "replicationGroup": [
-                              "providerMethod": "new"
-                            ],
-                            "config": [
-                              "resourcePoolId": 1080,
-                              "customOptions": [
-                                "root_pw": "!lin229f"
-                              ],
-                              "createUser": true
-                            ],
-                            "plan": [
-                              "code": "vm-1024",
-                              "id": 158
-                            ],
-                            "group": [
-                              "id": 779
+                            "expireDays": 7,
+                            "configEnabled": false,
+                            "name": "",
+                            "allowExisting": false,
+                            "type": "tcookest",
+                            "userGroup": [
+                              "id": ""
                             ]
+                          ],
+                          "networkInterfaces": [
+                            [
+                              "ipMode": "",
+                              "primaryInterface": true,
+                              "showNetworkPoolLabel": true,
+                              "showNetworkDhcpLabel": false,
+                              "network": [
+                                "idName": "VLAN0002 - Internal Server",
+                                "pool": [
+                                  "name": "10.30.20.0/22",
+                                  "id": 171
+                                ],
+                                "id": "network-11615",
+                                "hasPool": true
+                              ]
+                            ]
+                          ],
+                          "loadBalancer": [],
+                          "volumes": [
+                            [
+                              "vId": 922548,
+                              "volumeCustomizable": true,
+                              "readonlyName": false,
+                              "size": 10,
+                              "maxIOPS": null,
+                              "name": "root",
+                              "rootVolume": true,
+                              "storageType": 1,
+                              "datastoreId": "auto",
+                              "maxStorage": 0
+                            ]
+                          ],
+                          "replicationGroup": [
+                            "providerMethod": "new"
+                          ],
+                          "config": [
+                            "customOptions": [
+                              "tcontier02": "p1ckl3",
+                              "tcontier01": "tcook@morpheusdata.com"
+                            ],
+                            "resourcePoolId": 1080,
+                            "createUser": true
+                          ],
+                          "plan": [
+                            "code": "vm-512",
+                            "id": 157
+                          ],
+                          "group": [
+                            "id": 779
                           ]
                         ]
                       ]
@@ -284,11 +129,114 @@ node {
             ]
           ]
         ],
-        "name": "tcook-jenkins-test2",
-        "templateImage": "",
-        "type": "morpheus",
+        "Database": [
+          "linkedTiers": [],
+          "tierIndex": 2,
+          "instances": [
+            [
+              "instance": [
+                "type": "mysql2"
+              ],
+              "environments": [
+                "Dev": [
+                  "groups": [
+                    "tcook": [
+                      "clouds": [
+                        "VMware Demo Cluster": [
+                          "backup": [
+                            "backupRepository": 2,
+                            "veeamManagedServer": "",
+                            "createBackup": false,
+                            "jobAction": "new",
+                            "jobRetentionCount": "2",
+                            "enabled": true,
+                            "showScheduledBackupWarning": false
+                          ],
+                          "instance": [
+                            "layout": [
+                              "provisionTypeCode": "vmware",
+                              "code": "313abfe1-8297-4fad-832b-5daba6b9183f",
+                              "instanceVersion": "1",
+                              "name": "MySQL CentOS VMWare",
+                              "id": 967
+                            ],
+                            "expireDays": 7,
+                            "configEnabled": false,
+                            "name": "",
+                            "allowExisting": false,
+                            "type": "mysql2",
+                            "userGroup": [
+                              "id": ""
+                            ]
+                          ],
+                          "networkInterfaces": [
+                            [
+                              "ipMode": "",
+                              "primaryInterface": true,
+                              "showNetworkPoolLabel": true,
+                              "showNetworkDhcpLabel": false,
+                              "network": [
+                                "idName": "VLAN0002 - Internal Server",
+                                "pool": [
+                                  "name": "10.30.20.0/22",
+                                  "id": 171
+                                ],
+                                "id": "network-11615",
+                                "hasPool": true
+                              ]
+                            ]
+                          ],
+                          "loadBalancer": [],
+                          "volumes": [
+                            [
+                              "vId": 922548,
+                              "volumeCustomizable": true,
+                              "readonlyName": false,
+                              "size": 10,
+                              "maxIOPS": null,
+                              "name": "root",
+                              "rootVolume": true,
+                              "storageType": 1,
+                              "datastoreId": "auto",
+                              "maxStorage": 0
+                            ]
+                          ],
+                          "replicationGroup": [
+                            "providerMethod": "new"
+                          ],
+                          "config": [
+                            "resourcePoolId": 1080,
+                            "customOptions": [
+                              "root_pw": "p1ckl3"
+                            ],
+                            "createUser": true
+                          ],
+                          "plan": [
+                            "code": "vm-512",
+                            "id": 157
+                          ],
+                          "group": [
+                            "id": 779
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "name": "tcook-opencart02",
+      "templateImage": "",
+      "type": "morpheus",
+      "config": [
+        "isVpcSelectable": true,
+        "isEC2": false
       ]
-        //	apptest = morpheusApp.buildApp(morpheusUrl, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
+    ]
+        	apptest = morpheusApp.buildApp(morpheusUrl, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
 
         //  def jsonSlurper = new JsonSlurper()
         //  def jsonObject = jsonSlurper.parseText(apptest)
