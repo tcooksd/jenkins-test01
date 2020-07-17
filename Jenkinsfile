@@ -230,11 +230,7 @@ node {
       ],
       "name": "tcook-opencart02",
       "templateImage": "",
-      "type": "morpheus",
-      "config": [
-        "isVpcSelectable": true,
-        "isEC2": false
-      ]
+      "type": "morpheus"
     ]
         	apptest = morpheusApp.buildApp(morpheusUrl, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
 
