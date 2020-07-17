@@ -249,22 +249,22 @@ node {
       [
         "id": "",
         "tiers": [
-          "App": [
+          "Web": [
             "instances": [
               [
                 "instance": [
-                  "type": "apache",
+                  "type": "tcookest",
                   "cloud": "VMware Demo Cluster",
                   "layout": [
-                    "code": "apache-vmware-2.4-single",
-                    "id": 72,
+                    "code": "c45c4e7b-d8d4-4914-aa31-70cc4f5d0e89",
+                    "id": 1254,
                     "provisionTypeCode": "vmware",
-                    "name": "VMware Apache on Ubuntu 14.04",
-                    "instanceVersion": "2.4"
+                    "name": "tcook5919",
+                    "instanceVersion": "1"
                   ],
                   "expireDays": 7,
                   "configEnabled": false,
-                  "name": "tcook-apache-jenkins01",
+                  "name": "",
                   "allowExisting": false,
                   "userGroup": [
                     "id": ""
@@ -279,32 +279,32 @@ node {
                             "backup": [
                               "backupRepository": 2,
                               "veeamManagedServer": "",
-                              "createBackup": true,
+                              "createBackup": false,
                               "jobAction": "new",
                               "jobRetentionCount": "2",
                               "enabled": true,
-                              "showScheduledBackupWarning": true,
-                              "providerBackupType": -1
+                              "showScheduledBackupWarning": false
                             ],
                             "instance": [
                               "layout": [
                                 "provisionTypeCode": "vmware",
-                                "code": "apache-vmware-2.4-single",
-                                "instanceVersion": "2.4",
-                                "name": "VMware Apache on Ubuntu 14.04",
-                                "id": 72
+                                "code": "c45c4e7b-d8d4-4914-aa31-70cc4f5d0e89",
+                                "instanceVersion": "1",
+                                "name": "tcook5919",
+                                "id": 1254
                               ],
                               "expireDays": 7,
                               "configEnabled": false,
-                              "name": "tcook-apache-01",
+                              "name": "",
                               "allowExisting": false,
-                              "type": "apache",
+                              "type": "tcookest",
                               "userGroup": [
                                 "id": ""
                               ]
                             ],
                             "networkInterfaces": [
                               [
+                                "ipMode": "",
                                 "primaryInterface": true,
                                 "showNetworkPoolLabel": true,
                                 "showNetworkDhcpLabel": false,
@@ -319,100 +319,38 @@ node {
                                 ]
                               ]
                             ],
-                            "loadBalancer": [
-                              [
-                                "externalAddressCheck": false,
-                                "protocol": "http",
-                                "vipPort": 80,
-                                "vipName": "",
-                                "internalPort": 80,
-                                "loadBalancePort": null,
-                                "loadBalanceProtocol": "http",
-                                "vipHostname": "",
-                                "name": "",
-                                "id": "",
-                                "balanceMode": "leastconnections",
-                                "externalPort": 80
-                              ],
-                              [
-                                "externalAddressCheck": false,
-                                "protocol": "https",
-                                "vipPort": 443,
-                                "vipName": "",
-                                "internalPort": 443,
-                                "loadBalancePort": null,
-                                "loadBalanceProtocol": "https",
-                                "vipHostname": "",
-                                "name": "",
-                                "id": "",
-                                "balanceMode": "leastconnections",
-                                "externalPort": 443
-                              ]
-                            ],
+                            "loadBalancer": [],
                             "volumes": [
                               [
+                                "vId": 922548,
                                 "volumeCustomizable": true,
                                 "readonlyName": false,
-                                "maxIOPS": null,
-                                "index": 0,
-                                "hasDatastore": false,
-                                "minStorage": 2147483648,
-                                "vId": 62,
-                                "controllerMountPoint": "10:0:4:0",
                                 "size": 10,
-                                "name": "data",
+                                "maxIOPS": null,
+                                "name": "root",
                                 "rootVolume": true,
                                 "storageType": 1,
-                                "customMaxStorage": false,
                                 "datastoreId": "auto",
-                                "maxStorage": 10737418240
+                                "maxStorage": 0
                               ]
                             ],
                             "replicationGroup": [
-                              "providerMethod": "new",
-                              "providerId": -1
-                            ],
-                            "ports": [
-                              [
-                                "code": "apache.80",
-                                "visible": true,
-                                "internalPort": 80,
-                                "loadBalancePort": null,
-                                "loadBalanceProtocol": "http",
-                                "sortOrder": 0,
-                                "name": "Http",
-                                "id": 8,
-                                "shortName": "http",
-                                "externalPort": 80,
-                                "loadBalance": true
-                              ],
-                              [
-                                "code": "apache.443",
-                                "visible": true,
-                                "internalPort": 443,
-                                "loadBalancePort": null,
-                                "loadBalanceProtocol": "https",
-                                "sortOrder": 1,
-                                "name": "Https",
-                                "id": 9,
-                                "shortName": "https",
-                                "externalPort": 443,
-                                "loadBalance": true
-                              ]
-                            ],
-                            "plan": [
-                              "code": "vm-1024",
-                              "id": 158
+                              "providerMethod": "new"
                             ],
                             "config": [
+                              "customOptions": [
+                                "tcontier02": "p1ckl3",
+                                "tcontier01": "tcook@morpheusdata.com"
+                              ],
                               "resourcePoolId": 1080,
                               "createUser": true
                             ],
+                            "plan": [
+                              "code": "vm-512",
+                              "id": 157
+                            ],
                             "group": [
                               "id": 779
-                            ],
-                            "deployment": [
-                              "id": 69
                             ]
                           ]
                         ]
@@ -422,16 +360,16 @@ node {
                 ],
                 "backup": [
                   "backupRepository": 2,
-                  "veeamManagedServer": "",
-                  "createBackup": true,
+                  "createBackup": false,
                   "jobAction": "new",
                   "jobRetentionCount": "2",
                   "enabled": true,
-                  "showScheduledBackupWarning": true,
-                  "providerBackupType": -1
+                  "showScheduledBackupWarning": false,
+                  "veeamManagedServer": ""
                 ],
                 "networkInterfaces": [
                   [
+                    "ipMode": "",
                     "primaryInterface": true,
                     "showNetworkPoolLabel": true,
                     "showNetworkDhcpLabel": false,
@@ -446,100 +384,45 @@ node {
                     ]
                   ]
                 ],
-                "loadBalancer": [
-                  [
-                    "externalAddressCheck": false,
-                    "protocol": "http",
-                    "vipPort": 80,
-                    "vipName": "",
-                    "internalPort": 80,
-                    "loadBalancePort": null,
-                    "loadBalanceProtocol": "http",
-                    "vipHostname": "",
-                    "name": "",
-                    "id": "",
-                    "balanceMode": "leastconnections",
-                    "externalPort": 80
-                  ],
-                  [
-                    "externalAddressCheck": false,
-                    "protocol": "https",
-                    "vipPort": 443,
-                    "vipName": "",
-                    "internalPort": 443,
-                    "loadBalancePort": null,
-                    "loadBalanceProtocol": "https",
-                    "vipHostname": "",
-                    "name": "",
-                    "id": "",
-                    "balanceMode": "leastconnections",
-                    "externalPort": 443
-                  ]
-                ],
+                "loadBalancer": [],
                 "volumes": [
                   [
+                    "vId": 922548,
                     "volumeCustomizable": true,
                     "readonlyName": false,
-                    "maxIOPS": null,
-                    "index": 0,
-                    "hasDatastore": false,
-                    "minStorage": 2147483648,
-                    "vId": 62,
-                    "controllerMountPoint": "10:0:4:0",
                     "size": 10,
-                    "name": "data",
+                    "maxIOPS": null,
+                    "name": "root",
                     "rootVolume": true,
                     "storageType": 1,
-                    "customMaxStorage": false,
                     "datastoreId": "auto",
-                    "maxStorage": 10737418240
+                    "maxStorage": 0
                   ]
                 ],
                 "replicationGroup": [
-                  "providerMethod": "new",
-                  "providerId": -1
-                ],
-                "ports": [
-                  [
-                    "code": "apache.80",
-                    "visible": true,
-                    "internalPort": 80,
-                    "loadBalancePort": null,
-                    "loadBalanceProtocol": "http",
-                    "sortOrder": 0,
-                    "name": "Http",
-                    "id": 8,
-                    "shortName": "http",
-                    "externalPort": 80,
-                    "loadBalance": true
-                  ],
-                  [
-                    "code": "apache.443",
-                    "visible": true,
-                    "internalPort": 443,
-                    "loadBalancePort": null,
-                    "loadBalanceProtocol": "https",
-                    "sortOrder": 1,
-                    "name": "Https",
-                    "id": 9,
-                    "shortName": "https",
-                    "externalPort": 443,
-                    "loadBalance": true
-                  ]
-                ],
-                "plan": [
-                  "code": "vm-1024",
-                  "id": 158
+                  "providerMethod": "new"
                 ],
                 "config": [
+                  "customOptions": [
+                    "tcontier02": "p1ckl3",
+                    "tcontier01": "tcook@morpheusdata.com"
+                  ],
                   "resourcePoolId": 1080,
                   "createUser": true
+                ],
+                "plan": [
+                  "code": "vm-512",
+                  "id": 157
                 ],
                 "group": [
                   "id": 779
                 ],
-                "deployment": [
-                  "id": 69
+                "ports": [
+                  [
+                    "name": "",
+                    "port": "",
+                    "lb": ""
+                  ]
                 ]
               ]
             ],
@@ -559,8 +442,8 @@ node {
                     "instanceVersion": "1"
                   ],
                   "expireDays": 7,
-                  "configEnabled": true,
-                  "name": "tcook-jenkins-mysql01",
+                  "configEnabled": false,
+                  "name": "",
                   "allowExisting": false,
                   "userGroup": [
                     "id": ""
@@ -575,11 +458,11 @@ node {
                             "backup": [
                               "backupRepository": 2,
                               "veeamManagedServer": "",
-                              "createBackup": true,
+                              "createBackup": false,
                               "jobAction": "new",
                               "jobRetentionCount": "2",
                               "enabled": true,
-                              "showScheduledBackupWarning": true
+                              "showScheduledBackupWarning": false
                             ],
                             "instance": [
                               "layout": [
@@ -590,8 +473,8 @@ node {
                                 "id": 967
                               ],
                               "expireDays": 7,
-                              "configEnabled": true,
-                              "name": "tcook-mysql01",
+                              "configEnabled": false,
+                              "name": "",
                               "allowExisting": false,
                               "type": "mysql2",
                               "userGroup": [
@@ -627,7 +510,7 @@ node {
                                 "rootVolume": true,
                                 "storageType": 1,
                                 "datastoreId": "auto",
-                                "maxStorage": 10737418240
+                                "maxStorage": 0
                               ]
                             ],
                             "replicationGroup": [
@@ -636,13 +519,13 @@ node {
                             "config": [
                               "resourcePoolId": 1080,
                               "customOptions": [
-                                "root_pw": "!lin229f"
+                                "root_pw": "p1ckl3"
                               ],
                               "createUser": true
                             ],
                             "plan": [
-                              "code": "vm-1024",
-                              "id": 158
+                              "code": "vm-512",
+                              "id": 157
                             ],
                             "group": [
                               "id": 779
@@ -655,13 +538,12 @@ node {
                 ],
                 "backup": [
                   "backupRepository": 2,
-                  "createBackup": true,
+                  "createBackup": false,
                   "jobAction": "new",
                   "jobRetentionCount": "2",
                   "enabled": true,
-                  "showScheduledBackupWarning": true,
-                  "veeamManagedServer": "",
-                  "providerBackupType": -1
+                  "showScheduledBackupWarning": false,
+                  "veeamManagedServer": ""
                 ],
                 "networkInterfaces": [
                   [
@@ -701,13 +583,13 @@ node {
                 "config": [
                   "resourcePoolId": 1080,
                   "customOptions": [
-                    "root_pw": "!lin229f"
+                    "root_pw": "p1ckl3"
                   ],
                   "createUser": true
                 ],
                 "plan": [
-                  "code": "vm-1024",
-                  "id": 158
+                  "id": 158,
+                  "code": "vm-1024"
                 ],
                 "group": [
                   "id": 779
@@ -718,28 +600,27 @@ node {
                     "port": "",
                     "lb": ""
                   ]
+                ],
+                "workflow": [
+                  "taskSetId": 199
                 ]
               ]
             ],
             "tierIndex": 2
           ]
         ],
-        "templateName": "tcook-jenkins-test2",
-        "name": "tcook-app2",
+        "templateName": "tcook-opencart01",
+        "name": "tcook-opencart02",
         "group": [
           "id": 779,
           "name": "tcook"
         ],
         "environment": "Dev",
         "envCode": "dev",
-        "type": "morpheus",
-        "config": [
-          "isEC2": false,
-          "isVpcSelectable": true
-        ]
+        "type": "morpheus"
       ]
 
-      // apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
+      apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
 
       // print  InstanceID01
 
