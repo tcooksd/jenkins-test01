@@ -11,28 +11,28 @@ node {
         /* Let's make sure we have the repository cloned to our workspace */
         checkout scm
     }
-    
+
     constants = load "jsonValues.groovy"
 
     BlueprintName = "test01"
     AppName = "${BlueprintName}01"
 
 
-    stage('Check existing applications') {
-        /* Let's make sure we do not have an app with the same name running */
-        Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/instances", "${tcook-key}")
-        def jsonSlurper = new JsonSlurper()
-        def jsonObject = jsonSlurper.parseText(Morpheusret01)
+//    stage('Check existing applications') {
+//       /* Let's make sure we do not have an app with the same name running */
+//        Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/instances", "${tcook-key}")
+//        def jsonSlurper = new JsonSlurper()
+//        def jsonObject = jsonSlurper.parseText(Morpheusret01)
 
-        def instances01 = jsonObject.instances
-        def InstanceID01 = ""
-        for ( e in instances01 ) {
-         if ( e.name == "tcook-apache-jenkins01") {
-           InstanceID01 = e.id
-         }
-       }
-       print InstanceID01
-    }
+//        def instances01 = jsonObject.instances
+//        def InstanceID01 = ""
+//        for ( e in instances01 ) {
+//         if ( e.name == "tcook-apache-jenkins01") {
+//           InstanceID01 = e.id
+//         }
+//       }
+//       print InstanceID01
+//    }
 
 
 
