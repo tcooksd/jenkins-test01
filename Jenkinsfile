@@ -254,7 +254,8 @@ node {
       "templateImage": "",
       "type": "morpheus"
     ]
-        	apptest = morpheusApp.buildApp(morpheusUrl, postBody, "${tcook-key}")
+        	apptest = morpheusApp.buildApp(morpheusUrl, postBody, "605d5191-9814-4d0e-be02-3a95857d8c26
+")
 
         //  def jsonSlurper = new JsonSlurper()
         //  def jsonObject = jsonSlurper.parseText(apptest)
@@ -641,45 +642,9 @@ node {
         "envCode": "dev",
         "type": "morpheus"
       ]
-
-      apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "${tcook-key}")
-
-      // print  InstanceID01
+      apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "605d5191-9814-4d0e-be02-3a95857d8c26
+")
 
       }
     }
-    // stage('Provision deployment') {
-
-    //  Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/instances", "${tcook-key}")
-    //  def jsonSlurper = new JsonSlurper()
-    //  def jsonObject = jsonSlurper.parseText(Morpheusret01)
-
-    //  def instances01 = jsonObject.instances
-    //  def InstanceID01 = ""
-    //  for ( e in instances01 ) {
-    //   if ( e.name == "tcook-apache-jenkins01") {
-    //     InstanceID01 = e.id
-    //   }
-    // }
-     //print InstanceID01
-  //   withCredentials([string(credentialsId: 'tcook01', variable: 'tcook-key')]) {
-  //     String morpheusUrl2 = 'https://sandbox.morpheusdata.com/api/instances/10306/deploy'
-  //     Map<?, ?> postBody =
-  //     [
-  //       "appDeploy":[
-  //          "deployType": "git",
-  //          "gitUrl": "https://github.com/tcooksd/web-app01.git",
-  //          "fetchUrl": null,
-  //          "gitRef": "master",
-  //         "userVersion": "1"
-  //     ]
-  //    ]
-
-  //  apptest3 = morpheusApp.buildApp(morpheusUrl1, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
-  //   withCredentials([string(credentialsId: 'tcook01', variable: 'tcook-key')]) {
-//     String morpheusUrl2 = 'https://sandbox.morpheusdata.com/api/instances/10150/deploy'
-  //   Map<?, ?> postBody =
-
-  // }
-//   }
 }
