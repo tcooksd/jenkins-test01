@@ -254,8 +254,7 @@ node {
       "templateImage": "",
       "type": "morpheus"
     ]
-        	apptest = morpheusApp.buildApp(morpheusUrl, postBody, "605d5191-9814-4d0e-be02-3a95857d8c26
-")
+  apptest = morpheusApp.buildApp(morpheusUrl, postBody, "605d5191-9814-4d0e-be02-3a95857d8c26")
 
         //  def jsonSlurper = new JsonSlurper()
         //  def jsonObject = jsonSlurper.parseText(apptest)
@@ -642,8 +641,7 @@ node {
         "envCode": "dev",
         "type": "morpheus"
       ]
-      apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "605d5191-9814-4d0e-be02-3a95857d8c26
-")
+      apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "605d5191-9814-4d0e-be02-3a95857d8c26")
 
       }
     }
