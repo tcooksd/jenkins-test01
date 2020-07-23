@@ -16,7 +16,7 @@ node {
 
     stage('Provision Blueprint') {
 
-      withCredentials([string(credentialsId: 'tcook01', variable: 'tcook-key')]) {
+      withCredentials([string(credentialsId: 'tcook-key01', variable: 'tcook-key')]) {
       String morpheusUrl = 'https://sandbox.morpheusdata.com/api/blueprints'
 	    Map<?, ?> postBody =
       [
@@ -232,7 +232,7 @@ node {
       "templateImage": "",
       "type": "morpheus"
     ]
-        	apptest = morpheusApp.buildApp(morpheusUrl, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
+        	apptest = morpheusApp.buildApp(morpheusUrl, postBody, "${tcook-key}")
 
         //  def jsonSlurper = new JsonSlurper()
         //  def jsonObject = jsonSlurper.parseText(apptest)
@@ -243,7 +243,7 @@ node {
     }
     stage('Provision Dev App') {
 
-      withCredentials([string(credentialsId: 'tcook01', variable: 'tcook-key')]) {
+      withCredentials([string(credentialsId: 'tcook-key01', variable: 'tcook-key')]) {
       String morpheusUrl1 = 'https://sandbox.morpheusdata.com/api/apps'
       Map<?, ?> postBody =
       [
@@ -620,7 +620,7 @@ node {
         "type": "morpheus"
       ]
 
-      apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "117645d1-69ea-4778-bada-429bdbfe03c4")
+      apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "${tcook-key}")
 
       // print  InstanceID01
 
@@ -628,7 +628,7 @@ node {
     }
     stage('Provision deployment') {
 
-      Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/instances", "117645d1-69ea-4778-bada-429bdbfe03c4")
+      Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/instances", "${tcook-key}")
       def jsonSlurper = new JsonSlurper()
       def jsonObject = jsonSlurper.parseText(Morpheusret01)
 
