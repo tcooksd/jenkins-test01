@@ -12,7 +12,7 @@ node {
 
     constants = load "jsonValues.groovy"
 
-    BlueprintName = "tcookjenkinstest01"
+    BlueprintName = "tcookjenkinstest"
     AppName = "${BlueprintName}01"
 
 
@@ -252,7 +252,7 @@ node {
       "templateImage": "",
       "type": "morpheus"
     ]
-  apptest = morpheusApp.buildApp(morpheusUrl, postBody, "605d5191-9814-4d0e-be02-3a95857d8c26")
+  apptest = morpheusApp.buildApp(morpheusUrl, postBody, "64975bef-1fc5-41b9-93ab-b0114a2b1045")
 
         //  def jsonSlurper = new JsonSlurper()
         //  def jsonObject = jsonSlurper.parseText(apptest)
@@ -639,7 +639,7 @@ node {
         "envCode": "dev",
         "type": "morpheus"
       ]
-      apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "605d5191-9814-4d0e-be02-3a95857d8c26")
+      apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "64975bef-1fc5-41b9-93ab-b0114a2b1045")
 
       }
     }
