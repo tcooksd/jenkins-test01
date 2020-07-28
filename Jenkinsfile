@@ -12,7 +12,7 @@ node {
 
     constants = load "jsonValues.groovy"
 
-    BlueprintName = "tcookjenkins"
+    BlueprintName = "Morpheusdevops"
     AppName = "${BlueprintName}01"
 
 
