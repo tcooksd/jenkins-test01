@@ -23,6 +23,7 @@ node {
         def instances01 = jsonObject.instances
         def InstanceID01 = ""
         for ( e in instances01 ) {
+         print e.name
          if ( e.name == "${BlueprintName}") {
            InstanceID01 = e.id
          }
