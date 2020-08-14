@@ -10,7 +10,7 @@ node {
 
     constants = load "jsonValues.groovy"
 
-    BlueprintName = "Morpheusdevops"
+    BlueprintName = "Tcook-Devops-01"
     AppName = "${BlueprintName}01"
 
 
@@ -23,7 +23,7 @@ node {
         def instances01 = jsonObject.instances
         def InstanceID01 = ""
         for ( e in instances01 ) {
-         if ( e.name == "tcook-apache-jenkins01") {
+         if ( e.name == "${BlueprintName}") {
            InstanceID01 = e.id
          }
        }
@@ -32,9 +32,9 @@ node {
 
 
 
-  /*  stage('Provision Blueprint') {
+    stage('Provision Blueprint') {
 
-      withCredentials([string(credentialsId: 'tcook-key01', variable: 'tcook-key')]) {
+      withCredentials([string(credentialsId: 'tcook-key', variable: 'tcook-key01')]) {
       String morpheusUrl = 'https://sandbox.morpheusdata.com/api/blueprints'
 	    Map<?, ?> postBody =
       [
@@ -250,7 +250,7 @@ node {
       "templateImage": "",
       "type": "morpheus"
     ]
-  apptest = morpheusApp.buildApp(morpheusUrl, postBody, "ebb0050c-2588-4f44-ae4e-54b8924c1c7b")
+    apptest = morpheusApp.buildApp(morpheusUrl, postBody, 'tcook-key01')
 
         //  def jsonSlurper = new JsonSlurper()
         //  def jsonObject = jsonSlurper.parseText(apptest)
@@ -259,7 +259,7 @@ node {
 
         }
     }
-    stage('Provision Dev App') {
+/*    stage('Provision Dev App') {
 
       withCredentials([string(credentialsId: 'tcook-key01', variable: 'tcook-key')]) {
       String morpheusUrl1 = 'https://sandbox.morpheusdata.com/api/apps'
