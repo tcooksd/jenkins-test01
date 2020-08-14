@@ -22,14 +22,10 @@ node {
         def jsonSlurper = new JsonSlurper()
         def jsonObject = jsonSlurper.parseText(Morpheusret01)
 
-        print jsonObject
-        print Morpheusret01
-
         def instances01 = jsonObject.instances
         print instances01
         def InstanceID01 = ""
         for ( e in instances01 ) {
-         print e.name
          if ( e.name == "${BlueprintName}") {
            InstanceID01 = e.id
          }
@@ -257,7 +253,7 @@ node {
       "templateImage": "",
       "type": "morpheus"
     ]
-    apptest = morpheusApp.buildApp(morpheusUrl, postBody, 'tcookkey01')
+    apptest = morpheusApp.buildApp(morpheusUrl, postBody, "$tcookkey01")
 
         //  def jsonSlurper = new JsonSlurper()
         //  def jsonObject = jsonSlurper.parseText(apptest)
