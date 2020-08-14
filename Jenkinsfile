@@ -20,6 +20,7 @@ node {
         def jsonSlurper = new JsonSlurper()
         def jsonObject = jsonSlurper.parseText(Morpheusret01)
 
+        print jsonObject
 
         def instances01 = jsonObject.instances
         print instances01
