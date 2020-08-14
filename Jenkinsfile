@@ -16,8 +16,7 @@ node {
 
     stage('Check existing applications') {
        /* Let's make sure we do not have an app with the same name running */
-        Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/instances", "ebb0050c-2588-4f44-ae4e-54b8924c1c7b
-")
+        Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/instances", "ebb0050c-2588-4f44-ae4e-54b8924c1c7b")
         def jsonSlurper = new JsonSlurper()
         def jsonObject = jsonSlurper.parseText(Morpheusret01)
 
@@ -251,8 +250,7 @@ node {
       "templateImage": "",
       "type": "morpheus"
     ]
-  apptest = morpheusApp.buildApp(morpheusUrl, postBody, "ebb0050c-2588-4f44-ae4e-54b8924c1c7b
-")
+  apptest = morpheusApp.buildApp(morpheusUrl, postBody, "ebb0050c-2588-4f44-ae4e-54b8924c1c7b")
 
         //  def jsonSlurper = new JsonSlurper()
         //  def jsonObject = jsonSlurper.parseText(apptest)
@@ -639,8 +637,7 @@ node {
         "envCode": "dev",
         "type": "morpheus"
       ]
-      apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "ebb0050c-2588-4f44-ae4e-54b8924c1c7b
-")
+      apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "ebb0050c-2588-4f44-ae4e-54b8924c1c7b")
 
       }
     }
