@@ -32,7 +32,7 @@ node {
 
 
 
-    stage('Provision Blueprint') {
+  /*  stage('Provision Blueprint') {
 
       withCredentials([string(credentialsId: 'tcook-key01', variable: 'tcook-key')]) {
       String morpheusUrl = 'https://sandbox.morpheusdata.com/api/blueprints'
@@ -641,4 +641,5 @@ node {
 
       }
     }
+*/
 }
