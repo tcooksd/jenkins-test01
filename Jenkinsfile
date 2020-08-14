@@ -12,12 +12,13 @@ node {
 
     BlueprintName = "Tcook-Devops-01"
     AppName = "${BlueprintName}01"
+    ApplianceURL = "https://sandbox.morpheusdata.com"
 
 
     stage('Check existing applications') {
        /* Let's make sure we do not have an app with the same name running */
         withCredentials([string(credentialsId: 'tcook-key', variable: 'tcookkey01')]) {
-          Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/blueprints?max=1000", "$tcookkey01")
+          Morpheusret01 = morpheusApp.pullJson("$ApplianceURL/api/blueprints?max=1000", "$tcookkey01")
         }
         def jsonSlurper = new JsonSlurper()
         def jsonObject = jsonSlurper.parseText(Morpheusret01)
@@ -25,7 +26,6 @@ node {
         def instances01 = jsonObject.blueprints
         def InstanceID01 = ""
         for ( e in instances01 ) {
-         print e.name
          if ( e.name == "${BlueprintName}") {
            InstanceID01 = e.id
          }
@@ -38,7 +38,7 @@ node {
     stage('Provision Blueprint') {
 
       withCredentials([string(credentialsId: 'tcook-key', variable: 'tcookkey01')]) {
-      String morpheusUrl = 'https://sandbox.morpheusdata.com/api/blueprints'
+      String morpheusUrl = "$ApplianceURL/api/blueprints"
 	    Map<?, ?> postBody =
       [
       "image": "/assets/apps/template.png",
@@ -262,10 +262,10 @@ node {
 
         }
     }
-/*    stage('Provision Dev App') {
+  stage('Provision Dev App') {
 
-      withCredentials([string(credentialsId: 'tcook-key01', variable: 'tcook-key')]) {
-      String morpheusUrl1 = 'https://sandbox.morpheusdata.com/api/apps'
+      withCredentials([string(credentialsId: 'tcook-key', variable: 'tcookkey01')]) {
+      String morpheusUrl1 = "$ApplianceURL/api/apps"
       Map<?, ?> postBody =
       [
         "id": "",
@@ -640,9 +640,8 @@ node {
         "envCode": "dev",
         "type": "morpheus"
       ]
-      apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "ebb0050c-2588-4f44-ae4e-54b8924c1c7b")
+      apptest2 = morpheusApp.buildApp(morpheusUrl1, postBody, "$tcookkey01")
 
       }
     }
-*/
 }
