@@ -23,7 +23,6 @@ node {
         def jsonObject = jsonSlurper.parseText(Morpheusret01)
 
         def instances01 = jsonObject.instances
-        print instances01
         def InstanceID01 = ""
         for ( e in instances01 ) {
          if ( e.name == "${BlueprintName}") {
