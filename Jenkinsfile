@@ -17,7 +17,7 @@ node {
     stage('Check existing applications') {
        /* Let's make sure we do not have an app with the same name running */
         withCredentials([string(credentialsId: 'tcook-key', variable: 'tcookkey01')]) {
-          Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/blueprints", "$tcookkey01")
+          Morpheusret01 = morpheusApp.pullJson("https://sandbox.morpheusdata.com/api/blueprints?max=1000", "$tcookkey01")
         }
         def jsonSlurper = new JsonSlurper()
         def jsonObject = jsonSlurper.parseText(Morpheusret01)
