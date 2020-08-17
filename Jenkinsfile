@@ -29,7 +29,7 @@ node {
          if ( e.name == "${BlueprintName}") {
            blueprintID01 = e.id
            autcanCancelled = true
-           error("Aborting the build $blueprintID01 already exists.")
+           error("Aborting the build $e.name already exists.")
          }
        }
        print blueprintID01
