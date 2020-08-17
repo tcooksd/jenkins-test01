@@ -23,14 +23,16 @@ node {
         def jsonSlurper = new JsonSlurper()
         def jsonObject = jsonSlurper.parseText(Morpheusret01)
 
-        def instances01 = jsonObject.blueprints
-        def InstanceID01 = ""
-        for ( e in instances01 ) {
+        def blueprint01 = jsonObject.blueprints
+        def blueprintID01 = ""
+        for ( e in blueprint01 ) {
          if ( e.name == "${BlueprintName}") {
-           InstanceID01 = e.id
+           blueprintID01 = e.id
+           autcanCancelled = true
+           error('Aborting the build to prevent a loop.')
          }
        }
-       print InstanceID01
+       print blueprintID01
     }
 
 
