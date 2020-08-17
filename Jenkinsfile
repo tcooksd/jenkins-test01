@@ -16,7 +16,7 @@ node {
 
 
     stage('Check existing applications') {
-       /* Let's make sure we do not have an app with the same name running */
+       /* Let's make sure we do not have a Blueprint with the same name running */
         withCredentials([string(credentialsId: 'tcook-key', variable: 'tcookkey01')]) {
           Morpheusret01 = morpheusApp.pullJson("$ApplianceURL/api/blueprints?max=1000", "$tcookkey01")
         }
