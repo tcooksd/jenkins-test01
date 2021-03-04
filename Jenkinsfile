@@ -12,7 +12,7 @@ node {
 
     BlueprintName = "Tcook-Devops-01"
     AppName = "${BlueprintName}01"
-    ApplianceURL = "https://sandbox.morpheusdata.com"
+    ApplianceURL = "add_url"
 
 
     stage('Check existing applications') {
